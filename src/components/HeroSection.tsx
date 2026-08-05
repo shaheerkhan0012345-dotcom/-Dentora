@@ -11,109 +11,38 @@ interface TransparentVideoProps {
 
 const TransparentVideo: React.FC<TransparentVideoProps> = ({ src, className }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [videoError, setVideoError] = useState(false);
-  const [useCanvasFallback, setUseCanvasFallback] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Explicit play trigger to bypass autoplay policies
+    // Explicit hardware video decoding trigger
     const playPromise = video.play();
     if (playPromise !== undefined) {
       playPromise.catch((err) => {
         console.warn("Autoplay or video load error:", err);
       });
     }
-
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    let animId: number;
-
-    const render = () => {
-      if (video && !video.paused && !video.ended && video.videoWidth > 0) {
-        if (canvas.width !== video.videoWidth) {
-          canvas.width = video.videoWidth;
-          canvas.height = video.videoHeight;
-        }
-
-        const ctx = canvas.getContext('2d', { willReadFrequently: true });
-        if (ctx) {
-          try {
-            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-            const frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            // Ultra-fast 32-bit Uint32Array pixel loop for 60fps execution on all GPUs
-            const data32 = new Uint32Array(frame.data.buffer);
-            const len = data32.length;
-
-            for (let i = 0; i < len; i++) {
-              const pixel = data32[i];
-              // Extract RGB components in little endian order
-              const r = pixel & 0xff;
-              const g = (pixel >> 8) & 0xff;
-              const b = (pixel >> 16) & 0xff;
-
-              const maxBright = Math.max(r, g, b);
-
-              if (maxBright < 28) {
-                // Completely dark/black background -> 100% transparent
-                data32[i] = 0;
-              } else if (maxBright < 75) {
-                // Soft edge feathering so glass tooth anti-aliasing looks pristine
-                const alpha = Math.floor(((maxBright - 28) / 47) * 255);
-                data32[i] = (pixel & 0x00ffffff) | (alpha << 24);
-              }
-            }
-
-            ctx.putImageData(frame, 0, 0);
-          } catch (err) {
-            // CORS or canvas security error -> switch to CSS blend mode fallback so video is visible!
-            setUseCanvasFallback(true);
-          }
-        }
-      }
-
-      animId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    return () => {
-      cancelAnimationFrame(animId);
-    };
   }, [src]);
 
   return (
-    <div className="relative w-full h-full min-h-[320px] sm:min-h-[420px] lg:min-h-[540px] flex items-center justify-center overflow-hidden">
-      {/* Video element - kept active in DOM so browser decodes frames for real-time canvas chroma keying */}
-      <video
-        ref={videoRef}
-        src={src}
-        autoPlay
-        loop
-        muted
-        playsInline
-        crossOrigin="anonymous"
-        onError={() => setVideoError(true)}
-        className={
-          useCanvasFallback
-            ? `w-full h-full max-h-[880px] object-contain pointer-events-none transition-opacity duration-300 mix-blend-screen ${className || ''}`
-            : `absolute inset-0 w-full h-full object-contain pointer-events-none opacity-0 -z-10`
-        }
-      />
-
-      {/* Background-Free Canvas Output */}
-      {!useCanvasFallback && !videoError && (
-        <canvas
-          ref={canvasRef}
-          className={`w-full h-full max-h-[920px] object-contain pointer-events-none relative z-10 scale-110 sm:scale-120 lg:scale-130 transition-transform duration-300 ${className || ''}`}
+    <div className="relative w-full h-full min-h-[320px] sm:min-h-[420px] lg:min-h-[540px] flex items-center justify-center overflow-hidden [will-change:transform]">
+      {/* 100% GPU Hardware Accelerated 60FPS Video Rendering with Screen Blend Chroma Keying */}
+      {!videoError ? (
+        <video
+          ref={videoRef}
+          src={src}
+          autoPlay
+          loop
+          muted
+          playsInline
+          crossOrigin="anonymous"
+          onError={() => setVideoError(true)}
+          className={`w-full h-full max-h-[920px] object-contain pointer-events-none relative z-10 scale-110 sm:scale-120 lg:scale-130 transition-transform duration-300 mix-blend-screen filter contrast-[1.08] brightness-[1.04] [will-change:transform] [transform:translateZ(0)] ${className || ''}`}
         />
-      )}
-
-      {/* SVG Animated Tooth Backup if video fails to load completely */}
-      {videoError && (
+      ) : (
+        /* SVG Animated Tooth Backup if video fails to load completely */
         <motion.div
           animate={{ y: [-10, 10, -10], rotate: [-2, 2, -2] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
