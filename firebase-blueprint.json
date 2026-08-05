@@ -1,0 +1,475 @@
+{
+  "entities": {
+    "users": {
+      "title": "users",
+      "description": "Registered clinic staff members and patients",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth User ID" },
+        "displayName": { "type": "string", "description": "User's full name" },
+        "email": { "type": "string", "description": "Email address" },
+        "phone": { "type": "string", "description": "Contact telephone number" },
+        "photoURL": { "type": "string", "description": "Profile picture URL" },
+        "role": { 
+          "type": "string", 
+          "enum": ["Admin", "Doctor", "Receptionist", "Assistant", "Patient"], 
+          "description": "User access control role" 
+        },
+        "status": { 
+          "type": "string", 
+          "enum": ["active", "inactive"], 
+          "description": "Account active status" 
+        },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Last update timestamp" },
+        "lastLogin": { "type": "string", "format": "date-time", "description": "Last sign-in timestamp" }
+      },
+      "required": ["uid", "email", "role", "status"]
+    },
+    "patients": {
+      "title": "patients",
+      "description": "Comprehensive electronic health records for clinic patients",
+      "type": "object",
+      "properties": {
+        "patientId": { "type": "string", "description": "Unique clinic patient code e.g. PT-8801" },
+        "firstName": { "type": "string", "description": "Patient first name" },
+        "lastName": { "type": "string", "description": "Patient last name" },
+        "fullName": { "type": "string", "description": "Computed full name" },
+        "gender": { "type": "string", "enum": ["Male", "Female", "Other", "Unspecified"] },
+        "dob": { "type": "string", "format": "date" },
+        "age": { "type": "number" },
+        "phone": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "email": { "type": "string" },
+        "address": { "type": "string" },
+        "city": { "type": "string" },
+        "postalCode": { "type": "string" },
+        "cnic": { "type": "string" },
+        "bloodGroup": { "type": "string" },
+        "allergies": { "type": "array" },
+        "medicalHistory": { "type": "string" },
+        "currentMedication": { "type": "string" },
+        "assignedDoctor": { "type": "string" },
+        "status": { "type": "string", "enum": ["Active", "Inactive", "Blocked", "Archived"] },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["patientId", "firstName", "lastName", "fullName", "phone", "assignedDoctor", "status"]
+    },
+    "appointments": {
+      "title": "appointments",
+      "description": "Dental clinic appointment bookings and visit schedules",
+      "type": "object",
+      "properties": {
+        "appointmentId": { "type": "string", "description": "Unique appointment code e.g. APT-9001" },
+        "patientId": { "type": "string", "description": "Associated patient ID" },
+        "patientName": { "type": "string" },
+        "patientPhone": { "type": "string" },
+        "doctorId": { "type": "string" },
+        "doctorName": { "type": "string" },
+        "treatment": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "startTime": { "type": "string" },
+        "endTime": { "type": "string" },
+        "room": { "type": "string" },
+        "priority": { "type": "string", "enum": ["Normal", "High", "Urgent", "Emergency", "VIP"] },
+        "status": { "type": "string", "enum": ["Scheduled", "Confirmed", "Waiting", "Called", "In Treatment", "Completed", "Cancelled", "No Show", "Rescheduled"] },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["appointmentId", "patientId", "doctorName", "treatment", "date", "startTime", "endTime", "status"]
+    },
+    "queue": {
+      "title": "queue",
+      "description": "Live patient waiting room queue for today",
+      "type": "object",
+      "properties": {
+        "queueNumber": { "type": "string", "description": "Token number e.g. Q-101" },
+        "appointmentId": { "type": "string" },
+        "patientId": { "type": "string" },
+        "patientName": { "type": "string" },
+        "doctorName": { "type": "string" },
+        "room": { "type": "string" },
+        "treatment": { "type": "string" },
+        "priority": { "type": "string" },
+        "status": { "type": "string", "enum": ["Waiting", "Called", "In Treatment", "Completed", "Skipped", "Cancelled"] },
+        "timeArrived": { "type": "string" },
+        "calledAt": { "type": "string" },
+        "completedAt": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["queueNumber", "patientName", "doctorName", "status", "timeArrived"]
+    },
+    "doctorSchedules": {
+      "title": "doctorSchedules",
+      "description": "Doctor working hours, shift availability, and planned leaves",
+      "type": "object",
+      "properties": {
+        "doctorId": { "type": "string" },
+        "doctorName": { "type": "string" },
+        "workingDays": { "type": "array" },
+        "startTime": { "type": "string" },
+        "endTime": { "type": "string" },
+        "lunchStart": { "type": "string" },
+        "lunchEnd": { "type": "string" },
+        "leaves": { "type": "array" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["doctorId", "doctorName", "workingDays", "startTime", "endTime"]
+    },
+    "patientDocuments": {
+      "title": "patientDocuments",
+      "description": "Medical attachments, X-rays, consent forms, and reports stored in Firebase Storage",
+      "type": "object",
+      "properties": {
+        "patientId": { "type": "string" },
+        "filename": { "type": "string" },
+        "fileURL": { "type": "string" },
+        "fileType": { "type": "string" },
+        "uploadedBy": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "settings": {
+      "title": "settings",
+      "description": "Clinic parameters and system configurations",
+      "type": "object",
+      "properties": {
+        "clinicName": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "address": { "type": "string" },
+        "timezone": { "type": "string" },
+        "currency": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "auditLogs": {
+      "title": "auditLogs",
+      "description": "Audit trail for system events and security operations",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "userRole": { "type": "string" },
+        "action": { "type": "string" },
+        "details": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "action", "timestamp"]
+    },
+    "dentalCharts": {
+      "title": "dentalCharts",
+      "description": "FDI 32-tooth dental chart mapping conditions and surface observations per patient",
+      "type": "object",
+      "properties": {
+        "patientId": { "type": "string" },
+        "teeth": { "type": "object", "description": "Map of tooth FDI numbers (11-48) to condition details" },
+        "generalNotes": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "updatedBy": { "type": "string" }
+      },
+      "required": ["patientId", "teeth"]
+    },
+    "treatments": {
+      "title": "treatments",
+      "description": "Patient dental treatment plans and chronological procedures",
+      "type": "object",
+      "properties": {
+        "treatmentId": { "type": "string" },
+        "patientId": { "type": "string" },
+        "patientName": { "type": "string" },
+        "toothNumber": { "type": "string", "description": "FDI tooth number or 'General'" },
+        "treatmentType": { "type": "string" },
+        "assignedDoctor": { "type": "string" },
+        "estimatedCost": { "type": "number" },
+        "discount": { "type": "number" },
+        "priority": { "type": "string", "enum": ["Low", "Normal", "High", "Urgent"] },
+        "status": { "type": "string", "enum": ["Planned", "Approved", "In Progress", "Completed", "Cancelled"] },
+        "notes": { "type": "string" },
+        "treatmentDate": { "type": "string", "format": "date" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["treatmentId", "patientId", "treatmentType", "assignedDoctor", "status"]
+    },
+    "clinicalNotes": {
+      "title": "clinicalNotes",
+      "description": "Comprehensive clinical consultation notes and SOAP notes",
+      "type": "object",
+      "properties": {
+        "noteId": { "type": "string" },
+        "patientId": { "type": "string" },
+        "patientName": { "type": "string" },
+        "doctorName": { "type": "string" },
+        "chiefComplaint": { "type": "string" },
+        "diagnosis": { "type": "string" },
+        "findings": { "type": "string" },
+        "procedure": { "type": "string" },
+        "recommendations": { "type": "string" },
+        "followUp": { "type": "string" },
+        "soap": { "type": "object", "description": "Subjective, Objective, Assessment, Plan" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["noteId", "patientId", "doctorName"]
+    },
+    "prescriptions": {
+      "title": "prescriptions",
+      "description": "Patient digital prescriptions, medication schedules, and printable Rx records",
+      "type": "object",
+      "properties": {
+        "prescriptionId": { "type": "string" },
+        "patientId": { "type": "string" },
+        "patientName": { "type": "string" },
+        "doctorName": { "type": "string" },
+        "doctorSignature": { "type": "string" },
+        "medicines": { "type": "array" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["prescriptionId", "patientId", "doctorName", "medicines"]
+    },
+    "patientTimelines": {
+      "title": "patientTimelines",
+      "description": "Chronological audit trail of patient clinical events and attachments",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "patientId": { "type": "string" },
+        "type": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "performedBy": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["patientId", "type", "title", "timestamp"]
+    },
+    "invoices": {
+      "title": "invoices",
+      "description": "Patient billing statements, line items, taxes, discounts, and payment statuses",
+      "type": "object",
+      "properties": {
+        "invoiceNo": { "type": "string" },
+        "patientId": { "type": "string" },
+        "patientName": { "type": "string" },
+        "doctorId": { "type": "string" },
+        "doctorName": { "type": "string" },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "discount": { "type": "number" },
+        "tax": { "type": "number" },
+        "grandTotal": { "type": "number" },
+        "paidAmount": { "type": "number" },
+        "remainingBalance": { "type": "number" },
+        "paymentStatus": { "type": "string", "enum": ["Pending", "Partially Paid", "Paid", "Refunded", "Cancelled"] },
+        "invoiceDate": { "type": "string", "format": "date" },
+        "dueDate": { "type": "string", "format": "date" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["invoiceNo", "patientId", "patientName", "doctorName", "grandTotal", "paymentStatus"]
+    },
+    "payments": {
+      "title": "payments",
+      "description": "Individual payment transactions recorded against patient invoices",
+      "type": "object",
+      "properties": {
+        "invoiceId": { "type": "string" },
+        "invoiceNo": { "type": "string" },
+        "patientId": { "type": "string" },
+        "patientName": { "type": "string" },
+        "amount": { "type": "number" },
+        "method": { "type": "string", "enum": ["Cash", "Card", "Bank Transfer", "JazzCash", "EasyPaisa", "Future Online Gateway"] },
+        "collectedBy": { "type": "string" },
+        "referenceNumber": { "type": "string" },
+        "notes": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["invoiceId", "invoiceNo", "amount", "method", "collectedBy"]
+    },
+    "expenses": {
+      "title": "expenses",
+      "description": "Clinic operational expenses, salaries, laboratory fees, and vendor bills",
+      "type": "object",
+      "properties": {
+        "expenseId": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "vendor": { "type": "string" },
+        "amount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "expenseDate": { "type": "string", "format": "date" },
+        "invoiceAttachment": { "type": "string" },
+        "status": { "type": "string", "enum": ["Paid", "Pending", "Cancelled"] },
+        "recordedBy": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["expenseId", "category", "description", "amount", "status"]
+    },
+    "inventory": {
+      "title": "inventory",
+      "description": "Dental clinic medical inventory stock, threshold limits, and batch numbers",
+      "type": "object",
+      "properties": {
+        "itemId": { "type": "string" },
+        "itemName": { "type": "string" },
+        "category": { "type": "string" },
+        "supplierName": { "type": "string" },
+        "purchasePrice": { "type": "number" },
+        "sellingPrice": { "type": "number" },
+        "currentStock": { "type": "number" },
+        "minimumStock": { "type": "number" },
+        "maximumStock": { "type": "number" },
+        "expiryDate": { "type": "string", "format": "date" },
+        "batchNumber": { "type": "string" },
+        "location": { "type": "string" },
+        "reorderStatus": { "type": "string", "enum": ["In Stock", "Low Stock", "Critical", "Expired"] },
+        "unit": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["itemId", "itemName", "category", "currentStock", "minimumStock"]
+    },
+    "suppliers": {
+      "title": "suppliers",
+      "description": "Directory of dental material vendors, pharmaceutical distributors, and lab partners",
+      "type": "object",
+      "properties": {
+        "supplierName": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "address": { "type": "string" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["supplierName", "phone"]
+    },
+    "aiChats": {
+      "title": "aiChats",
+      "description": "Enterprise Dentora AI Copilot chat sessions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "userId": { "type": "string" },
+        "userRole": { "type": "string" },
+        "category": { "type": "string", "enum": ["Clinical", "Billing", "General", "Patient Care", "Inventory", "Analytics"] },
+        "isPinned": { "type": "boolean" },
+        "isArchived": { "type": "boolean" },
+        "selectedPatientId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "title", "userId"]
+    },
+    "aiMessages": {
+      "title": "aiMessages",
+      "description": "Messages exchanged within Dentora AI Copilot chat sessions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "chatId": { "type": "string" },
+        "sender": { "type": "string", "enum": ["user", "model", "system"] },
+        "content": { "type": "string" },
+        "contextSummary": { "type": "string" },
+        "tokens": { "type": "number" },
+        "feedback": { "type": "string", "enum": ["like", "dislike", "none"] },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "chatId", "sender", "content", "timestamp"]
+    },
+    "aiPrompts": {
+      "title": "aiPrompts",
+      "description": "Preset and custom prompt templates for Dentora AI Copilot",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "category": { "type": "string" },
+        "title": { "type": "string" },
+        "promptText": { "type": "string" },
+        "role": { "type": "string" },
+        "isCustom": { "type": "boolean" }
+      },
+      "required": ["id", "title", "promptText"]
+    },
+    "aiSettings": {
+      "title": "aiSettings",
+      "description": "User-level AI Copilot configuration and memory preferences",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "temperature": { "type": "number" },
+        "maxTokens": { "type": "number" },
+        "systemPromptOverride": { "type": "string" },
+        "streamEnabled": { "type": "boolean" },
+        "modelAlias": { "type": "string" }
+      },
+      "required": ["id", "userId"]
+    },
+    "aiLogs": {
+      "title": "aiLogs",
+      "description": "Audit trail for AI Copilot usage, latency, and tokens",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "action": { "type": "string" },
+        "promptLength": { "type": "number" },
+        "responseLength": { "type": "number" },
+        "durationMs": { "type": "number" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "action", "timestamp"]
+    },
+    "onlineBookings": {
+      "title": "onlineBookings",
+      "description": "Public online 24/7 dental visit booking requests",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clinicId": { "type": "string" },
+        "clinicName": { "type": "string" },
+        "doctorId": { "type": "string" },
+        "doctorName": { "type": "string" },
+        "treatmentName": { "type": "string" },
+        "date": { "type": "string" },
+        "timeSlot": { "type": "string" },
+        "patientName": { "type": "string" },
+        "patientEmail": { "type": "string" },
+        "patientPhone": { "type": "string" },
+        "notes": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "cancelled"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["clinicId", "doctorId", "doctorName", "treatmentName", "date", "timeSlot", "patientName", "patientPhone"]
+    },
+    "notifications": {
+      "title": "notifications",
+      "description": "System, SMS and WhatsApp notification logs and triggers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "appointmentId": { "type": "string" },
+        "patientName": { "type": "string" },
+        "patientPhone": { "type": "string" },
+        "message": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "channel": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "type", "patientName", "message"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": { "schema": { "$ref": "#/entities/users" }, "description": "User profiles" },
+    "/patients/{patientDocId}": { "schema": { "$ref": "#/entities/patients" }, "description": "Patients database" },
+    "/appointments/{aptId}": { "schema": { "$ref": "#/entities/appointments" }, "description": "Appointments database" },
+    "/onlineBookings/{bookingId}": { "schema": { "$ref": "#/entities/onlineBookings" }, "description": "Online booking requests" },
+    "/notifications/{notifId}": { "schema": { "$ref": "#/entities/notifications" }, "description": "Notifications logs" }
+  }
+}
