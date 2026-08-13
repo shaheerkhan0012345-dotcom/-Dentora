@@ -19,7 +19,7 @@ import { UserProfile } from '../types';
 import { useAuth } from '../hooks/useAuth';
 import { UserRole } from '../types/user';
 import { loginSchema, signUpSchema, forgotPasswordSchema } from '../schemas/authSchemas';
-import { TeethlyLogo } from '../components/common/TeethlyLogo';
+import { DentoraLogo } from '../components/common/DentoraLogo';
 
 interface AuthPageProps {
   onNavigateHome: () => void;
@@ -223,7 +223,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({
             onClick={onNavigateHome}
             className="flex items-center text-slate-900 hover:opacity-80 transition-opacity cursor-pointer group"
           >
-            <TeethlyLogo size="lg" />
+            <DentoraLogo size="lg" />
           </button>
 
           <button
