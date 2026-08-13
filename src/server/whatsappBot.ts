@@ -246,7 +246,7 @@ export async function sendWhatsAppMessageViaWeb(phone: string, text: string) {
   }
 
   const jid = `${cleaned}@s.whatsapp.net`;
-  
+
   await waSocket.sendMessage(jid, { text });
   return { success: true, jid };
 }
