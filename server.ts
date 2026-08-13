@@ -17,10 +17,26 @@ async function startServer() {
   const app = express();
   const PORT = process.env.PORT || 3000;
 
+  const ALLOWED_ORIGINS = [
+    'https://dentora-alpha.vercel.app',
+    'https://dentora.vercel.app',
+    'http://localhost:3000',
+    'http://localhost:5173',
+  ];
+
   app.use(cors({
-    origin: '*',
+    origin: (origin, callback) => {
+      // Allow requests with no origin (curl, Postman, server-to-server)
+      if (!origin) return callback(null, true);
+      // Allow any vercel.app subdomain + explicit list
+      if (ALLOWED_ORIGINS.includes(origin) || origin.endsWith('.vercel.app')) {
+        return callback(null, true);
+      }
+      return callback(null, true); // Still allow all for now — tighten after testing
+    },
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'x-service-secret'],
+    credentials: true,
   }));
 
   app.use(express.json({ limit: '50mb' }));
