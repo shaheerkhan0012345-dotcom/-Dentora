@@ -37,9 +37,7 @@ export const DentoraLogo: React.FC<DentoraLogoProps> = ({
         alt="Teethly Logo"
         className={`${heightClass || 'h-9'} w-auto object-contain shrink-0`}
       />
-      <span className={`font-black tracking-tight text-xl sm:text-2xl ${textColor}`}>
-        TEETHLY
-      </span>
+
 
       {showTagline && (
         <span

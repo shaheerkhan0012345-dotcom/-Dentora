@@ -21,7 +21,7 @@ export const DEFAULT_NOTIFICATION_PREFERENCES: PushNotificationPreferences = {
 };
 
 export class PushNotificationService {
-  private static STORAGE_KEY = 'dentora_push_preferences';
+  private static STORAGE_KEY = 'teethly_push_preferences';
 
   public static getPreferences(): PushNotificationPreferences {
     try {
@@ -67,7 +67,7 @@ export class PushNotificationService {
         const notif = new Notification(title, {
           body: options.body,
           icon: options.icon || '/icon-192.png',
-          tag: options.tag || 'dentora-notif',
+          tag: options.tag || 'teethly-notif',
         });
 
         if (prefs.soundEnabled) {

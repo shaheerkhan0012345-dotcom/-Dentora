@@ -137,7 +137,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       {loading ? (
         <ClinicLoader 
           message="Loading Clinical Workspace" 
-          subtext="Connecting securely to Dentora medical database..." 
+          subtext="Connecting securely to Teethly medical database..." 
         />
       ) : (
         children

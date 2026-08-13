@@ -222,7 +222,7 @@ export const StaffProfileModal: React.FC<StaffProfileModalProps> = ({
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="sarah@dentora.clinic"
+                  placeholder="sarah@teethly.clinic"
                   className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl font-medium focus:ring-1 focus:ring-[#1d5bd8]"
                 />
               </div>

@@ -85,7 +85,7 @@ const TESTIMONIALS_SLIDES: TestimonialItem[] = [
     centerPatientName: 'Elena Rostova',
     rightReview: {
       headline: 'Flawless Laser Whitening',
-      quote: 'In just one 45-minute session, my teeth went 7 shades brighter with zero sensitivity. Dentora Dental Care is hands-down the premier luxury dental clinic in the city.',
+      quote: 'In just one 45-minute session, my teeth went 7 shades brighter with zero sensitivity. Teethly Dental Care is hands-down the premier luxury dental clinic in the city.',
       author: 'Claire Jenkins',
       role: 'Laser Whitening',
       avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=200',

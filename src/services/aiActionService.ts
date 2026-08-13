@@ -230,7 +230,7 @@ export async function approveAndExecuteAIAction(
           treatmentName: 'Dental Appointment',
           date: new Date().toISOString().split('T')[0],
           timeSlot: '10:00 AM',
-          clinicName: 'Dentora Dental Clinic',
+          clinicName: 'Teethly Dental Clinic',
         });
 
         resultMessage = `WhatsApp message dispatched to ${recipientName} (${recipientPhone}). ${res.message}`;
@@ -397,7 +397,7 @@ export function parsePromptToActionProposal(
         recipientPhone: selectedPatient?.phone || '+923001234567',
         recipientName: selectedPatient?.name || 'Ali Khan',
         messageType: 'reminder',
-        bodyText: `Dear ${selectedPatient?.name || 'Ali Khan'}, friendly reminder for your upcoming dental visit tomorrow at Dentora Clinic.`,
+        bodyText: `Dear ${selectedPatient?.name || 'Ali Khan'}, friendly reminder for your upcoming dental visit tomorrow at Teethly Clinic.`,
       },
       previewSummary: `Recipient: ${selectedPatient?.name || 'Ali Khan'} | Channel: WhatsApp Web Bot`,
     };

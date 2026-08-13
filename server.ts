@@ -120,7 +120,7 @@ Respond intelligently, concisely, and helpfully in clean Markdown.`;
   // CLOUDINARY SERVER-SIDE UPLOAD ENDPOINT
   app.post('/api/cloudinary/upload', async (req, res) => {
     try {
-      const { fileData, folder = 'dentora_app', resourceType = 'auto' } = req.body;
+      const { fileData, folder = 'teethly_app', resourceType = 'auto' } = req.body;
 
       if (!fileData) {
         return res.status(400).json({ error: 'fileData (base64 or URL) is required' });
@@ -232,7 +232,7 @@ Respond intelligently, concisely, and helpfully in clean Markdown.`;
         cleanedPhone = '1' + cleanedPhone;
       }
 
-      const clinic = clinicName || 'Dentora Flagship Practice';
+      const clinic = clinicName || 'Teethly Flagship Practice';
       const messageText = 
         `*Appointment Confirmation - ${clinic}*\n\n` +
         `Hello *${patientName}*,\n` +
@@ -331,7 +331,7 @@ Respond intelligently, concisely, and helpfully in clean Markdown.`;
 
       if (!ai) {
         // Fallback simulated response if GEMINI_API_KEY is not yet attached
-        const fallbackText = `**[Dentora AI Copilot Offline Mode]**\n\nI received your query: "${prompt}".\n\n*Note: To enable live Gemini AI integration, ensure GEMINI_API_KEY is configured in your platform Secrets.*`;
+        const fallbackText = `**[Teethly AI Copilot Offline Mode]**\n\nI received your query: "${prompt}".\n\n*Note: To enable live Gemini AI integration, ensure GEMINI_API_KEY is configured in your platform Secrets.*`;
         return res.json({ responseText: fallbackText, contextUsed: !!patientContext });
       }
 
@@ -405,7 +405,7 @@ Respond intelligently, concisely, and helpfully in clean Markdown.`;
       const ai = getGenAIClient();
 
       if (!ai) {
-        const fallbackText = `**[Dentora AI Copilot]**\n\nReceived: "${prompt}".\n\n(Live Gemini key pending configuration in Secrets panel)`;
+        const fallbackText = `**[Teethly AI Copilot]**\n\nReceived: "${prompt}".\n\n(Live Gemini key pending configuration in Secrets panel)`;
         res.write(`data: ${JSON.stringify({ chunk: fallbackText })}\n\n`);
         res.write(`data: [DONE]\n\n`);
         return res.end();

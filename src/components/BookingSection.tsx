@@ -108,7 +108,7 @@ export const BookingSection: React.FC = () => {
     try {
       await submitOnlineBooking({
         clinicId: 'clinic-flagship',
-        clinicName: 'Dentora Flagship Practice',
+        clinicName: 'Teethly Flagship Practice',
         doctorId: 'DOC-101',
         doctorName: doctorName,
         treatmentName: formData.service,
@@ -117,7 +117,7 @@ export const BookingSection: React.FC = () => {
         patientName: formData.name,
         patientEmail: formData.email,
         patientPhone: formData.phone,
-        notes: 'Requested via Dentora Online Booking Banner',
+        notes: 'Requested via Teethly Online Booking Banner',
       });
 
       // Dispatch automated WhatsApp notification or prepare 1-click wa.me link
@@ -128,7 +128,7 @@ export const BookingSection: React.FC = () => {
         treatmentName: formData.service,
         date: bookingDate,
         timeSlot: bookingTime,
-        clinicName: 'Dentora Flagship Practice',
+        clinicName: 'Teethly Flagship Practice',
       });
 
       setWhatsappLink(waResult.whatsappDeepLink);
@@ -215,7 +215,7 @@ export const BookingSection: React.FC = () => {
             {/* Background Image - Doctor situated clearly on the LEFT */}
             <img 
               src={bookingBgImg} 
-              alt="Dentora Doctor Booking Banner" 
+              alt="Teethly Doctor Booking Banner" 
               referrerPolicy="no-referrer"
               className="absolute inset-0 w-full h-full object-cover object-left-top sm:object-left brightness-100"
             />

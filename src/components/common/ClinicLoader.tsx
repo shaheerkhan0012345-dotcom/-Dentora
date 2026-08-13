@@ -9,7 +9,7 @@ interface ClinicLoaderProps {
 
 export const ClinicLoader: React.FC<ClinicLoaderProps> = ({
   message = 'Initializing Clinical Workspace',
-  subtext = 'Connecting securely to Dentora database...',
+  subtext = 'Connecting securely to Teethly database...',
   fullScreen = true,
 }) => {
   const content = (
@@ -41,14 +41,14 @@ export const ClinicLoader: React.FC<ClinicLoaderProps> = ({
         <div
           className="absolute inset-y-0 bg-[#0052cc] w-1/2 rounded-full"
           style={{
-            animation: 'dentoraProgress 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+            animation: 'teethlyProgress 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite',
           }}
         />
       </div>
 
       {/* INLINE ANIMATION KEYFRAMES */}
       <style>{`
-        @keyframes dentoraProgress {
+        @keyframes teethlyProgress {
           0% { left: -50%; width: 50%; }
           50% { left: 25%; width: 60%; }
           100% { left: 100%; width: 50%; }

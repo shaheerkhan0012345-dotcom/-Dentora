@@ -171,7 +171,7 @@ export const AboutUsSection: React.FC = () => {
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-44 sm:h-52 shadow-md border border-slate-200/80 group">
                 <img 
                   src={teamImg} 
-                  alt="Dentora Dental Specialist" 
+                  alt="Teethly Dental Specialist" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-108"
                 />
@@ -194,7 +194,7 @@ export const AboutUsSection: React.FC = () => {
               transition={{ duration: 0.7, delay: 0.15 }}
             >
               <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-800 leading-[1.32]">
-                At <span className="text-[#0B2E78] font-bold">Dentora</span>, We Understand The Power Of A Healthy Aesthetic. Our Specialist Team Ensures Precise, Individual Care Within A Boutique Space, Utilizing High-End Technology For Lasting Dental Excellence.
+                At <span className="text-[#0B2E78] font-bold">Teethly</span>, We Understand The Power Of A Healthy Aesthetic. Our Specialist Team Ensures Precise, Individual Care Within A Boutique Space, Utilizing High-End Technology For Lasting Dental Excellence.
               </p>
             </motion.div>
 
@@ -292,7 +292,7 @@ export const AboutUsSection: React.FC = () => {
               {/* Details Paragraphs */}
               <div className="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                 <p>
-                  Founded on the principles of empathetic care and precision aesthetics, Dentora transforms conventional dental visits into a soothing, tailored luxury experience.
+                  Founded on the principles of empathetic care and precision aesthetics, Teethly transforms conventional dental visits into a soothing, tailored luxury experience.
                 </p>
                 <p>
                   Our clinic combines zero-radiation digital imaging, painless laser diagnostics, and board-certified specialists under one roof to deliver predictable, natural, and long-lasting smile transformations.
@@ -321,7 +321,7 @@ export const AboutUsSection: React.FC = () => {
               {/* Modal Footer */}
               <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
                 <span className="text-xs text-slate-400">
-                  Dentora Clinic Platform
+                  Teethly Clinic Platform
                 </span>
                 <button
                   onClick={() => setIsModalOpen(false)}

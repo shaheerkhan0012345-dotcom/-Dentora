@@ -464,7 +464,7 @@ export async function triggerNotificationEvent(
         message = `Dear ${apt.patientName}, your appointment #${apt.appointmentId} has been cancelled. Contact clinic to reschedule.`;
         break;
       case 'Reminder':
-        message = `Reminder: Dental appointment today at ${apt.startTime} at Dentora Clinic in ${apt.room}.`;
+        message = `Reminder: Dental appointment today at ${apt.startTime} at Teethly Clinic in ${apt.room}.`;
         break;
       case 'NoShow':
         message = `Dear ${apt.patientName}, we missed you for your scheduled appointment at ${apt.startTime}. Please reach out to reschedule.`;
@@ -483,7 +483,7 @@ export async function triggerNotificationEvent(
           treatmentName: apt.treatment,
           date: apt.date,
           timeSlot: apt.startTime,
-          clinicName: 'Dentora Practice',
+          clinicName: 'Teethly Practice',
         });
         if (waResult.sentViaApi) {
           dispatchStatus = 'Sent';

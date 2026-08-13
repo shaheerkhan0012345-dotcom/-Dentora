@@ -34,7 +34,7 @@ export async function checkCloudinaryStatus(): Promise<CloudinaryStatus> {
   */
 export async function uploadToCloudinary(
   file: File,
-  folder: string = 'dentora_app'
+  folder: string = 'teethly_app'
 ): Promise<CloudinaryUploadResult> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();

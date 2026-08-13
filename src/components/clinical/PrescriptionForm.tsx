@@ -132,7 +132,7 @@ export const PrescriptionForm: React.FC<PrescriptionFormProps> = ({
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(16);
     doc.setFont('helvetica', 'bold');
-    doc.text('DENTORA CLINICAL DENTAL SYSTEM', 14, 15);
+    doc.text('TEETHLY CLINICAL DENTAL SYSTEM', 14, 15);
 
     doc.setFontSize(9);
     doc.setFont('helvetica', 'normal');

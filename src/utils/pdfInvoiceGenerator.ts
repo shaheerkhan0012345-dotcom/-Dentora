@@ -168,7 +168,7 @@ export function generateInvoicePDF(invoice: InvoiceRecord) {
 
   doc.setFont('helvetica', 'normal');
   doc.setTextColor(grayColor[0], grayColor[1], grayColor[2]);
-  const splitNotes = doc.splitTextToSize(invoice.notes || 'Thank you for choosing Dentora Dental Clinic. Please keep this invoice for insurance and tax purposes.', 92);
+  const splitNotes = doc.splitTextToSize(invoice.notes || 'Thank you for choosing Teethly Dental Clinic. Please keep this invoice for insurance and tax purposes.', 92);
   doc.text(splitNotes, 18, y + 11);
 
   // Calculation Breakdown on right
@@ -220,15 +220,8 @@ export function generateInvoicePDF(invoice: InvoiceRecord) {
   doc.setFont('helvetica', 'bold');
   doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
   doc.text('VERIFIED', 18, stampY + 9);
-  doc.text('DENTORA', 18, stampY + 13);
-  doc.text('DIGITAL', 18, stampY + 17);
-
-  doc.setFontSize(7);
-  doc.setFont('helvetica', 'normal');
-  doc.setTextColor(grayColor[0], grayColor[1], grayColor[2]);
   doc.text('TEETHLY', 18, stampY + 13);
-  doc.setFontSize(7);
-  doc.text('VERIFIED CLINICAL RECORD', 18, stampY + 18);
+  doc.text('DIGITAL', 18, stampY + 17);
 
   doc.setTextColor(darkColor[0], darkColor[1], darkColor[2]);
   doc.setFontSize(8);

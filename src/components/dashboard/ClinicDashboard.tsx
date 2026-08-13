@@ -358,7 +358,7 @@ export const ClinicDashboard: React.FC<{ userName?: string }> = ({ userName = 'S
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. Dentora Manhattan Dental Spa"
+                      placeholder="e.g. Teethly Manhattan Dental Spa"
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#1d5bd8]/20 focus:border-[#1d5bd8]"
                     />
                   </div>

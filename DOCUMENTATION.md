@@ -22,7 +22,7 @@ Teethly is an enterprise-grade, multi-tenant Dental Practice Operating System en
 ### A. Progressive Web App (PWA) & Offline Mode
 * **Service Worker (`public/sw.js`):** Implements Network-First strategy for dynamic API calls and Cache-First strategy for static shell assets.
 * **Offline Sync Store (`src/services/offlineSyncService.ts`):** Automatically queues offline operations (appointments, notes, payments) when internet connectivity is lost, displaying a live banner (`OfflineBanner.tsx`). Automatically re-syncs queue upon network restoration.
-* **PWA Installation Prompt (`PWAInstaller.tsx`):** Detects `beforeinstallprompt` event and guides users to install Dentora natively on desktop or mobile.
+* **PWA Installation Prompt (`PWAInstaller.tsx`):** Detects `beforeinstallprompt` event and guides users to install Teethly natively on desktop or mobile.
 
 ### B. Push & Email Notification Engine
 * **Push Notification Service (`src/services/pushNotificationService.ts`):** Handles desktop/mobile notification permissions, plays synthesized audio feedback, and delivers alerts for appointments, overdue invoices, low inventory, and AI clinical warnings.
@@ -46,7 +46,7 @@ Teethly is an enterprise-grade, multi-tenant Dental Practice Operating System en
 ## 3. PROJECT FOLDER STRUCTURE
 
 ```
-dentora/
+teethly/
 ├── public/
 │   ├── manifest.json            # PWA Manifest configuration
 │   ├── sw.js                    # Service Worker caching & background sync
@@ -130,7 +130,7 @@ VITE_FIREBASE_APP_ID=your_app_id
 
 ## 6. VERIFICATION & QUALITY ASSURANCE
 
-Dentora OS Phase 10 has been thoroughly tested for:
+Teethly OS Phase 10 has been thoroughly tested for:
 1. Zero TypeScript compilation errors (`npm run build` succeeds cleanly).
 2. Clean linting score (`npm run lint` passes).
 3. Service worker registration & offline cache fallback.

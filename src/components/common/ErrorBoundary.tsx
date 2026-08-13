@@ -60,7 +60,7 @@ export class ErrorBoundary extends Component<Props, State> {
             </div>
 
             <p className="text-sm text-slate-300 leading-relaxed mb-6">
-              Dentora OS isolated a component rendering issue to preserve patient data integrity and session stability.
+              Teethly OS isolated a component rendering issue to preserve patient data integrity and session stability.
             </p>
 
             {this.state.error && (

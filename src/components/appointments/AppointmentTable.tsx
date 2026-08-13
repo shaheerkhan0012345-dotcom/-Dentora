@@ -130,7 +130,7 @@ export const AppointmentTable: React.FC<AppointmentTableProps> = ({
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', `dentora_appointments_${new Date().toISOString().split('T')[0]}.csv`);
+    link.setAttribute('download', `teethly_appointments_${new Date().toISOString().split('T')[0]}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -349,7 +349,7 @@ export const AppointmentTable: React.FC<AppointmentTableProps> = ({
                           treatmentName: apt.treatment,
                           date: apt.date,
                           timeSlot: apt.startTime,
-                          clinicName: 'Dentora Practice',
+                          clinicName: 'Teethly Practice',
                         })}
                         target="_blank"
                         rel="noopener noreferrer"

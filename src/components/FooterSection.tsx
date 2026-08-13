@@ -246,7 +246,7 @@ export const FooterSection: React.FC = () => {
                 </div>
                 <div className="flex items-start gap-2">
                   <Mail className="w-4 h-4 text-[#2073e5] shrink-0 mt-0.5" />
-                  <span>care@dentoraclinic.com</span>
+                  <span>care@teethlyclinic.com</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Clock className="w-4 h-4 text-[#2073e5] shrink-0 mt-0.5" />
@@ -274,7 +274,7 @@ export const FooterSection: React.FC = () => {
             <div className="w-20 h-24 sm:w-28 sm:h-32 rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 shrink-0 border border-slate-100">
               <img 
                 src={footerDentistImg} 
-                alt="Dentora Lead Specialist" 
+                alt="Teethly Lead Specialist" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-top"
               />

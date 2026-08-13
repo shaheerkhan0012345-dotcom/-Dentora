@@ -30,7 +30,7 @@ export function getWhatsAppApiUrl(): string {
 }
 
 const WHATSAPP_API_URL = getWhatsAppApiUrl();
-const SERVICE_SECRET = import.meta.env.VITE_WHATSAPP_SERVICE_SECRET || 'dentora_secret_key_2026';
+const SERVICE_SECRET = import.meta.env.VITE_WHATSAPP_SERVICE_SECRET || 'teethly_secret_key_2026';
 
 function getServiceHeaders() {
   return {
@@ -125,7 +125,7 @@ export function formatPhoneForWhatsApp(phone: string): string {
  * Builds a friendly, formatted WhatsApp confirmation text
  */
 export function buildWhatsAppAppointmentText(opts: WhatsAppMessageOptions): string {
-  const clinic = opts.clinicName || 'Dentora Flagship Practice';
+  const clinic = opts.clinicName || 'Teethly Flagship Practice';
   return (
     `*Appointment Confirmation - ${clinic}*\n\n` +
     `Hello *${opts.patientName}*,\n` +
@@ -201,7 +201,7 @@ export function subscribeToWhatsAppStatus(callback: (status: WhatsAppWebStatus) 
           status: mappedStatus,
           qrDataUrl: finalQrDataUrl,
           rawQr: data.rawQr || null,
-          user: data.user || (data.phoneNumber ? { name: `Dentora Clinic (+${data.phoneNumber})`, id: data.phoneNumber } : null),
+          user: data.user || (data.phoneNumber ? { name: `Teethly Clinic (+${data.phoneNumber})`, id: data.phoneNumber } : null),
           error: data.error || null,
         });
       } else {
@@ -266,7 +266,7 @@ export async function getWhatsAppWebStatus(): Promise<WhatsAppWebStatus> {
         status: mappedStatus,
         qrDataUrl,
         rawQr,
-        user: data.user || (data.phoneNumber ? { name: `Dentora Clinic (+${data.phoneNumber})`, id: data.phoneNumber } : null),
+        user: data.user || (data.phoneNumber ? { name: `Teethly Clinic (+${data.phoneNumber})`, id: data.phoneNumber } : null),
         error: data.error || null,
       };
     }
@@ -300,7 +300,7 @@ export async function getWhatsAppWebStatus(): Promise<WhatsAppWebStatus> {
         status: mappedStatus,
         qrDataUrl: finalQrDataUrl,
         rawQr: data.rawQr || null,
-        user: data.user || (data.phoneNumber ? { name: `Dentora Clinic (+${data.phoneNumber})`, id: data.phoneNumber } : null),
+        user: data.user || (data.phoneNumber ? { name: `Teethly Clinic (+${data.phoneNumber})`, id: data.phoneNumber } : null),
         error: data.error || null,
       };
     }
@@ -369,7 +369,7 @@ export async function simulatePairWhatsAppWeb(): Promise<WhatsAppWebStatus> {
         status: 'READY',
         qrDataUrl: null,
         phoneNumber: '15553368672',
-        user: { id: '15553368672@s.whatsapp.net', name: 'Dentora Main Clinic (+1 555-DENTORA)' },
+        user: { id: '15553368672@s.whatsapp.net', name: 'Teethly Main Clinic (+1 555-TEETHLY)' },
         updatedAt: new Date(),
         error: null,
       },
@@ -382,7 +382,7 @@ export async function simulatePairWhatsAppWeb(): Promise<WhatsAppWebStatus> {
   return {
     status: 'connected',
     qrDataUrl: null,
-    user: { id: '15553368672@s.whatsapp.net', name: 'Dentora Main Clinic (+1 555-DENTORA)' },
+    user: { id: '15553368672@s.whatsapp.net', name: 'Teethly Main Clinic (+1 555-TEETHLY)' },
     error: null,
   };
 }

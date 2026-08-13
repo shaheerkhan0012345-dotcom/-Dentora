@@ -52,7 +52,7 @@ export const userService = {
       updatedAt: now,
       lastLogin: now,
       memberSince: user.memberSince || 'August 2026',
-      plan: user.plan || 'Dentora Dental Care Member',
+      plan: user.plan || 'Teethly Dental Care Member',
       assignedOrthodontist: user.assignedOrthodontist || 'Dr. Elena Rostova, MD',
     };
 
