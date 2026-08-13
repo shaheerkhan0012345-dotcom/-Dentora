@@ -21,7 +21,7 @@ export function generateInvoicePDF(invoice: InvoiceRecord) {
   doc.setTextColor(darkColor[0], darkColor[1], darkColor[2]);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(22);
-  doc.text('DENTORA DENTAL CLINIC', 14, 22);
+  doc.text('TEETHLY DENTAL CLINIC', 14, 22);
 
   doc.setFontSize(9);
   doc.setFont('helvetica', 'bold');
@@ -32,7 +32,7 @@ export function generateInvoicePDF(invoice: InvoiceRecord) {
   doc.setFontSize(8);
   doc.setTextColor(grayColor[0], grayColor[1], grayColor[2]);
   doc.text('104 Healthcare Blvd, Suite 300 • Islamabad / Lahore', 14, 32);
-  doc.text('Tel: +92 (51) 889-2210 • Email: billing@dentoraclinic.com • Tax ID: PK-998822', 14, 36);
+  doc.text('Tel: +92 (51) 889-2210 • Email: billing@teethlyclinic.com • Tax ID: PK-998822', 14, 36);
 
   // INVOICE BADGE & STATUS
   doc.setFillColor(lightBg[0], lightBg[1], lightBg[2]);
@@ -226,8 +226,16 @@ export function generateInvoicePDF(invoice: InvoiceRecord) {
   doc.setFontSize(7);
   doc.setFont('helvetica', 'normal');
   doc.setTextColor(grayColor[0], grayColor[1], grayColor[2]);
-  doc.text('Scan with Dentora Mobile App', 40, stampY + 10);
-  doc.text(`Doc Ref: ${invoice.id.substring(0, 16)}`, 40, stampY + 14);
+  doc.text('TEETHLY', 18, stampY + 13);
+  doc.setFontSize(7);
+  doc.text('VERIFIED CLINICAL RECORD', 18, stampY + 18);
+
+  doc.setTextColor(darkColor[0], darkColor[1], darkColor[2]);
+  doc.setFontSize(8);
+  doc.text('Scan with Teethly Mobile App', 40, stampY + 10);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(grayColor[0], grayColor[1], grayColor[2]);
+  doc.text('To view your 3D Dental Chart, Prescriptions & Post-Op Guidelines.', 40, stampY + 15);
 
   // Doctor Signature Line
   doc.setDrawColor(100, 116, 139);
@@ -241,11 +249,11 @@ export function generateInvoicePDF(invoice: InvoiceRecord) {
   doc.setTextColor(grayColor[0], grayColor[1], grayColor[2]);
   doc.text(invoice.doctorName, 130, stampY + 23);
 
-  // 6. FOOTER
-  doc.setFontSize(7);
-  doc.setTextColor(148, 163, 184);
-  doc.text('Dentora Clinic Management System • Computer Generated Official Medical Invoice', 105, 287, { align: 'center' });
+  // 6. FOOTER PAGE NUMBER
+  doc.setFontSize(8);
+  doc.setTextColor(160, 160, 160);
+  doc.text('Teethly Clinic Management System • Computer Generated Official Medical Invoice', 105, 287, { align: 'center' });
 
-  // SAVE FILE
-  doc.save(`${invoice.invoiceNo}_Dentora_Invoice.pdf`);
+  // Save PDF
+  doc.save(`${invoice.invoiceNo}_Teethly_Invoice.pdf`);
 }

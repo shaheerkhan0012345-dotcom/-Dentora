@@ -23,14 +23,14 @@ const THEME_DOC = 'theme_config';
 const LANGUAGE_DOC = 'language_config';
 
 export const DEFAULT_GENERAL_SETTINGS: GeneralClinicSettings = {
-  clinicName: 'Dentora Dental Specialist Clinic & Laser Center',
+  clinicName: 'Teethly Dental Specialist Clinic & Laser Center',
   tagline: 'Precision Care, Modern Dentistry',
   logoUrl: '',
   address: '9450 Wilshire Blvd, Suite 400, Beverly Hills, CA 90212 / Gulberg III, Lahore',
   city: 'Beverly Hills / Lahore',
   phone: '+92 300 1234567',
-  email: 'info@dentora.clinic',
-  website: 'https://dentora.clinic',
+  email: 'info@teethly.clinic',
+  website: 'https://teethly.clinic',
   taxRegistrationNo: 'NTN-8920194-2 / STRN-3277',
   currencySymbol: 'Rs.',
   currencyCode: 'PKR',
@@ -49,7 +49,7 @@ export const DEFAULT_AI_SETTINGS: AISettingsConfig = {
   enableStreaming: true,
   maxContextTokens: 32000,
   systemPromptTemplate:
-    'You are Dentora AI, a world-class dental clinical decision support copilot. Provide accurate, evidence-based recommendations.',
+    'You are Teethly AI, a world-class dental clinical decision support copilot. Provide accurate, evidence-based recommendations.',
   hourlyRateLimit: 120,
   autoApproveLowRiskActions: false,
 };
@@ -195,8 +195,8 @@ export async function updateWhatsAppSettings(settings: WhatsAppSettingsConfig, p
 export async function exportDatabaseBackupJSON() {
   const backupData = {
     backupTimestamp: new Date().toISOString(),
-    version: 'Dentora OS Phase 8 Enterprise',
-    system: 'Dentora Firestore ERP',
+    version: 'Teethly OS Phase 8 Enterprise',
+    system: 'Teethly Firestore ERP',
   };
   return JSON.stringify(backupData, null, 2);
 }

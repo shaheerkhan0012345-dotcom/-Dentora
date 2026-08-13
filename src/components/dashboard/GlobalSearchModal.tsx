@@ -235,7 +235,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
               </span>
               <span>Global Quick Search</span>
             </div>
-            <span>Dentora Enterprise Database</span>
+            <span>Teethly Enterprise Database</span>
           </div>
         </motion.div>
       </div>

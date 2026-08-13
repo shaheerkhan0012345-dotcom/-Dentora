@@ -1,11 +1,11 @@
-# DENTORA – AI-POWERED DENTAL PRACTICE OPERATING SYSTEM
+# TEETHLY – AI-POWERED DENTAL PRACTICE OPERATING SYSTEM
 ## Phase 10 Production Documentation & Deployment Guide
 
 ---
 
 ## 1. ARCHITECTURE OVERVIEW
 
-Dentora is an enterprise-grade, multi-tenant Dental Practice Operating System engineered with modern web standards, role-based access control (RBAC), and offline-first capabilities.
+Teethly is an enterprise-grade, multi-tenant Dental Practice Operating System engineered with modern web standards, role-based access control (RBAC), and offline-first capabilities.
 
 ### Key Architectural Layers:
 * **Frontend Framework:** React 18+ with Vite & TypeScript for strict type safety.

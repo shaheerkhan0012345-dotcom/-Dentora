@@ -83,7 +83,7 @@ export const VoiceAssistantPlaceholder: React.FC<VoiceAssistantPlaceholderProps>
         window.speechSynthesis.cancel();
         setIsSpeaking(false);
       } else {
-        const text = textToSpeak || inputText || 'Dentora AI Voice and Typing Assistant active and ready.';
+        const text = textToSpeak || inputText || 'Teethly AI Voice and Typing Assistant active and ready.';
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = language === 'Urdu' ? 'ur-PK' : 'en-US';
         utterance.onend = () => setIsSpeaking(false);

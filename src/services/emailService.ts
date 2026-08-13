@@ -26,7 +26,7 @@ export interface EmailLog {
 }
 
 export class EmailService {
-  private static STORAGE_KEY = 'dentora_email_logs';
+  private static STORAGE_KEY = 'Teethly_email_logs';
 
   public static getEmailLogs(): EmailLog[] {
     try {
@@ -41,7 +41,7 @@ export class EmailService {
         to: 'samira.k@example.com',
         recipientName: 'Samira Khan',
         templateType: 'appointment_reminder',
-        subject: 'Appointment Reminder: Tomorrow at 10:00 AM - Dentora Flagship Clinic',
+        subject: 'Appointment Reminder: Tomorrow at 10:00 AM - Teethly Flagship Clinic',
         sentAt: new Date(Date.now() - 1000 * 60 * 120).toISOString(),
         status: 'delivered',
         htmlPreview: this.generateHtml('appointment_reminder', 'Samira Khan', {
@@ -49,7 +49,7 @@ export class EmailService {
           time: '10:00 AM',
           doctor: 'Dr. Elena Rostova',
           treatment: 'Routine Dental Hygiene & Composite Polish',
-          clinicName: 'Dentora Flagship Clinic',
+          clinicName: 'Teethly Flagship Clinic',
           clinicAddress: 'Floor 4, Medical Towers, Downtown',
           clinicPhone: '+92 300 1234567'
         }),
@@ -59,7 +59,7 @@ export class EmailService {
         to: 'ahmed.r@example.com',
         recipientName: 'Ahmed Raza',
         templateType: 'invoice_receipt',
-        subject: 'Invoice & Receipt #INV-2026-0892 - Dentora Dental Practice',
+        subject: 'Invoice & Receipt #INV-2026-0892 - Teethly Dental Practice',
         sentAt: new Date(Date.now() - 1000 * 60 * 360).toISOString(),
         status: 'delivered',
         htmlPreview: this.generateHtml('invoice_receipt', 'Ahmed Raza', {
@@ -102,7 +102,7 @@ export class EmailService {
     const header = `
       <div style="background-color: #0f172a; padding: 24px; text-align: center; border-radius: 12px 12px 0 0;">
         <h1 style="color: #ffffff; margin: 0; font-family: sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.5px;">
-          <span style="color: #3b82f6;">DENTORA</span> DENTAL PRACTICE OS
+          <span style="color: #3b82f6;">TEETHLY</span> DENTAL PRACTICE OS
         </h1>
         <p style="color: #94a3b8; font-size: 12px; margin-top: 4px; font-family: sans-serif;">Enterprise Dental Health & Patient Management</p>
       </div>
@@ -110,7 +110,7 @@ export class EmailService {
 
     const footer = `
       <div style="background-color: #f8fafc; padding: 20px; text-align: center; border-radius: 0 0 12px 12px; font-family: sans-serif; font-size: 12px; color: #64748b; border-top: 1px solid #e2e8f0;">
-        <p style="margin: 0 0 8px 0;"><strong>Dentora Healthcare System</strong> • 24/7 Automated Dental Care</p>
+        <p style="margin: 0 0 8px 0;"><strong>Teethly Healthcare System</strong> • 24/7 Automated Dental Care</p>
         <p style="margin: 0;">Need to reschedule? Call us at <strong>${data.clinicPhone || '+92 300 1234567'}</strong> or reply to this email.</p>
       </div>
     `;
@@ -122,7 +122,7 @@ export class EmailService {
         bodyContent = `
           <h2 style="color: #0f172a; margin-top: 0;">Appointment Confirmed!</h2>
           <p>Dear <strong>${recipientName}</strong>,</p>
-          <p>Your dental appointment at <strong>${data.clinicName || 'Dentora Flagship Clinic'}</strong> has been successfully booked.</p>
+          <p>Your dental appointment at <strong>${data.clinicName || 'Teethly Flagship Clinic'}</strong> has been successfully booked.</p>
           <div style="background: #eff6ff; border-left: 4px solid #1d5bd8; padding: 16px; margin: 20px 0; border-radius: 6px;">
             <p style="margin: 4px 0;"><strong>📅 Date:</strong> ${data.date || 'Tomorrow'}</p>
             <p style="margin: 4px 0;"><strong>⏰ Time:</strong> ${data.time || '10:00 AM'}</p>
@@ -141,7 +141,7 @@ export class EmailService {
           <div style="background: #f0fdf4; border-left: 4px solid #10b981; padding: 16px; margin: 20px 0; border-radius: 6px;">
             <p style="margin: 4px 0;"><strong>📅 Scheduled Date:</strong> ${data.date || 'Aug 4, 2026'}</p>
             <p style="margin: 4px 0;"><strong>⏰ Time Slot:</strong> ${data.time || '11:30 AM'}</p>
-            <p style="margin: 4px 0;"><strong>📍 Location:</strong> ${data.clinicAddress || 'Dentora Flagship, Suite 402'}</p>
+            <p style="margin: 4px 0;"><strong>📍 Location:</strong> ${data.clinicAddress || 'Teethly Flagship, Suite 402'}</p>
           </div>
           <p>If you need to make changes, please let us know at least 4 hours in advance.</p>
         `;
@@ -151,7 +151,7 @@ export class EmailService {
         bodyContent = `
           <h2 style="color: #0f172a; margin-top: 0;">Payment Receipt & Invoice</h2>
           <p>Dear <strong>${recipientName}</strong>,</p>
-          <p>Thank you for visiting Dentora Clinic. Below is your payment confirmation statement.</p>
+          <p>Thank you for visiting Teethly Clinic. Below is your payment confirmation statement.</p>
           <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 4px 0;"><strong>Invoice #:</strong> ${data.invoiceNumber || 'INV-9021'}</p>
             <p style="margin: 4px 0;"><strong>Treatments Rendered:</strong> ${data.treatmentList || 'Dental Clean & Polish'}</p>
@@ -165,7 +165,7 @@ export class EmailService {
         bodyContent = `
           <h2 style="color: #0f172a; margin-top: 0;">Security Password Reset Request</h2>
           <p>Dear <strong>${recipientName}</strong>,</p>
-          <p>We received a request to reset your Dentora OS account password.</p>
+          <p>We received a request to reset your Teethly OS account password.</p>
           <div style="text-align: center; margin: 28px 0;">
             <a href="${data.resetLink || '#'}" style="background-color: #1d5bd8; color: #ffffff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-weight: bold; font-family: sans-serif; display: inline-block;">Reset Password Now</a>
           </div>
@@ -175,7 +175,7 @@ export class EmailService {
 
       case 'welcome_patient':
         bodyContent = `
-          <h2 style="color: #0f172a; margin-top: 0;">Welcome to Dentora Dental OS! 👋</h2>
+          <h2 style="color: #0f172a; margin-top: 0;">Welcome to Teethly Dental OS! 👋</h2>
           <p>Dear <strong>${recipientName}</strong>,</p>
           <p>Welcome to our dental family! You now have access to our 24/7 Patient Portal where you can:</p>
           <ul style="color: #334155; line-height: 1.6;">
@@ -191,7 +191,7 @@ export class EmailService {
         bodyContent = `
           <h2 style="color: #0f172a; margin-top: 0;">Post-Procedure Oral Care Check-In 🦷</h2>
           <p>Dear <strong>${recipientName}</strong>,</p>
-          <p>Dr. Elena Rostova and the team at Dentora hope you are recovering comfortably after your recent treatment.</p>
+          <p>Dr. Elena Rostova and the team at Teethly hope you are recovering comfortably after your recent treatment.</p>
           <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px; margin: 20px 0; border-radius: 6px;">
             <p style="margin: 0;"><strong>Care Tip:</strong> Continue soft warm saline rinses and follow your prescribed medication schedule.</p>
           </div>
@@ -205,7 +205,7 @@ export class EmailService {
       <html>
         <head>
           <meta charset="utf-8">
-          <title>${data.subject || 'Dentora Notification'}</title>
+          <title>${data.subject || 'Teethly Notification'}</title>
         </head>
         <body style="background-color: #f1f5f9; font-family: sans-serif; padding: 20px; margin: 0;">
           <div style="max-width: 580px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden;">

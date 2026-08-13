@@ -91,8 +91,8 @@ export function renderTemplate(templateStr: string, vars: TemplateVariables): st
   let result = templateStr;
 
   const defaults: TemplateVariables = {
-    clinicName: vars.clinicName || 'Dentora Dental Practice',
-    clinicPhone: vars.clinicPhone || '+1 (555) DENTORA',
+    clinicName: vars.clinicName || 'Teethly Dental Practice',
+    clinicPhone: vars.clinicPhone || '+1 (555) Teethly',
     clinicAddress: vars.clinicAddress || 'Medical Plaza, Suite 400',
     doctorName: vars.doctorName || 'Attending Dentist',
     appointmentDate: vars.appointmentDate || 'Upcoming Date',

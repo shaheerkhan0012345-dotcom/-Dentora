@@ -24,10 +24,10 @@ export const EmailPreviewModal: React.FC<EmailPreviewModalProps> = ({
   const [recipientEmail, setRecipientEmail] = useState(defaultRecipientEmail);
   const [subject, setSubject] = useState(
     defaultTemplate === 'appointment_reminder'
-      ? 'Appointment Reminder: Tomorrow at 10:00 AM - Dentora Flagship'
+      ? 'Appointment Reminder: Tomorrow at 10:00 AM - Teethly Flagship'
       : defaultTemplate === 'invoice_receipt'
       ? 'Invoice & Payment Receipt #INV-2026-0892'
-      : 'Important Notification from Dentora Clinic'
+      : 'Important Notification from Teethly Clinic'
   );
   const [sending, setSending] = useState(false);
   const [sentSuccess, setSentSuccess] = useState(false);
@@ -41,14 +41,14 @@ export const EmailPreviewModal: React.FC<EmailPreviewModalProps> = ({
     time: defaultData.time || '10:00 AM',
     doctor: defaultData.doctor || 'Dr. Elena Rostova',
     treatment: defaultData.treatment || 'Hygiene Polish & Composite Filling',
-    clinicName: 'Dentora Flagship Clinic',
+    clinicName: 'Teethly Flagship Clinic',
     clinicAddress: 'Floor 4, Medical Towers',
     clinicPhone: '+92 300 1234567',
     invoiceNumber: defaultData.invoiceNumber || 'INV-2026-0892',
     totalAmount: defaultData.totalAmount || 'Rs. 18,500',
     treatmentList: defaultData.treatmentList || 'Root Canal Therapy, Digital X-Ray',
     paymentMethod: 'Credit Card (Visa)',
-    resetLink: 'https://dentora-app.com/reset?token=xyz9876',
+    resetLink: 'https://Teethly-app.com/reset?token=xyz9876',
     ...defaultData
   });
 
@@ -86,7 +86,7 @@ export const EmailPreviewModal: React.FC<EmailPreviewModalProps> = ({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h2 className="text-xl font-extrabold tracking-tight">Dentora Email Engine</h2>
+                <h2 className="text-xl font-extrabold tracking-tight">Teethly Email Engine</h2>
                 <span className="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 text-xs font-bold">SMTP Dispatch</span>
               </div>
               <p className="text-xs text-slate-400 mt-0.5">Generate, preview, and dispatch patient & operational emails</p>
@@ -135,12 +135,12 @@ export const EmailPreviewModal: React.FC<EmailPreviewModalProps> = ({
                     onChange={(e) => {
                       const val = e.target.value as EmailTemplateType;
                       setTemplateType(val);
-                      if (val === 'appointment_confirmation') setSubject('Appointment Confirmed: Dentora Dental Practice');
-                      if (val === 'appointment_reminder') setSubject('Appointment Reminder: Tomorrow - Dentora Flagship');
+                      if (val === 'appointment_confirmation') setSubject('Appointment Confirmed: Teethly Dental Practice');
+                      if (val === 'appointment_reminder') setSubject('Appointment Reminder: Tomorrow - Teethly Flagship');
                       if (val === 'invoice_receipt') setSubject('Official Invoice & Payment Receipt');
-                      if (val === 'welcome_patient') setSubject('Welcome to Dentora Dental Care!');
+                      if (val === 'welcome_patient') setSubject('Welcome to Teethly Dental Care!');
                       if (val === 'followup_reminder') setSubject('Post-Treatment Care Check-in');
-                      if (val === 'password_reset') setSubject('Reset Your Dentora Password');
+                      if (val === 'password_reset') setSubject('Reset Your Teethly Password');
                     }}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-bold bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#1d5bd8]"
                   >

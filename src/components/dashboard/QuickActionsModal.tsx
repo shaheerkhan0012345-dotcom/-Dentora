@@ -106,7 +106,7 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#1d5bd8]" />
-                <h2 className="text-base font-extrabold text-slate-900">Dentora Quick Action Launcher</h2>
+                <h2 className="text-base font-extrabold text-slate-900">Teethly Quick Action Launcher</h2>
               </div>
               <p className="text-xs text-slate-500 font-medium mt-0.5">
                 Select an operational workflow to launch instantly

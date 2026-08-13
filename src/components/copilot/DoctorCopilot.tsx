@@ -61,7 +61,7 @@ export const DoctorCopilot: React.FC<DoctorCopilotProps> = ({
           </div>
           <div>
             <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              Dentora Clinical Copilot
+              Teethly Clinical Copilot
               <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-100 text-[#1d5bd8] dark:bg-blue-950 dark:text-blue-300">
                 Doctor Edition
               </span>

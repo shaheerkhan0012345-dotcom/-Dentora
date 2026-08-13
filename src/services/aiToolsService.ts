@@ -85,7 +85,7 @@ export async function executeAIToolCall(
           timeSlot: '10:00 AM',
           doctorName: 'Elena Rostova',
           treatmentName: 'Dental Examination',
-          clinicName: 'Dentora Practice',
+          clinicName: 'Teethly Practice',
         });
 
         return {

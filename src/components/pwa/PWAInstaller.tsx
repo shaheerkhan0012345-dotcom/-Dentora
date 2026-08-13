@@ -45,7 +45,7 @@ export const PWAInstaller: React.FC = () => {
   const handleEnableNotifications = async () => {
     const res = await PushNotificationService.requestPermission();
     if (res === 'granted') {
-      PushNotificationService.sendNotification('Dentora Push Alerts Active', {
+      PushNotificationService.sendNotification('Teethly Push Alerts Active', {
         body: 'You will now receive instant appointment, payment, and clinical updates.',
       });
     }
@@ -70,11 +70,11 @@ export const PWAInstaller: React.FC = () => {
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-sm text-white">Install Dentora App</span>
+                <span className="font-extrabold text-sm text-white">Install Teethly App</span>
                 <span className="text-[10px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded-md font-bold">PWA</span>
               </div>
               <p className="text-xs text-slate-300 mt-1 leading-normal">
-                Install Dentora OS on your desktop or mobile home screen for lightning offline access and push alerts.
+                Install Teethly OS on your desktop or mobile home screen for lightning offline access and push alerts.
               </p>
               <button
                 onClick={handleInstallClick}

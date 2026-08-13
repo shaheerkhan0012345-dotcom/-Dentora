@@ -190,7 +190,7 @@ const TransparentVideo: React.FC<TransparentVideoProps> = ({ src, className }) =
           <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gradient-to-tr from-blue-600 via-sky-400 to-teal-300 flex items-center justify-center text-white shadow-lg">
             <Sparkles className="w-12 h-12 text-white animate-spin-slow" />
           </div>
-          <span className="mt-3 text-xs font-bold text-[#0B2E78] tracking-widest uppercase">Dentora 3D Smile</span>
+          <span className="mt-3 text-xs font-bold text-[#0B2E78] tracking-widest uppercase">Teethly 3D Smile</span>
         </motion.div>
       )}
     </div>

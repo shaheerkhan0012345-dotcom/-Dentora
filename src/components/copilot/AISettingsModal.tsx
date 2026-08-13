@@ -54,7 +54,7 @@ export const AISettingsModal: React.FC<AISettingsModalProps> = ({
               <Sliders className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-base font-extrabold text-slate-900">Dentora AI Settings</h3>
+              <h3 className="text-base font-extrabold text-slate-900">Teethly AI Settings</h3>
               <p className="text-xs text-slate-500">Configure Copilot intelligence parameters</p>
             </div>
           </div>

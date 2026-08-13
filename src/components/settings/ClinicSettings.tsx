@@ -69,7 +69,7 @@ export const ClinicSettings: React.FC<ClinicSettingsProps> = ({
 
   // WhatsApp Test Dispatch state
   const [testPhone, setTestPhone] = useState('+92 300 1234567');
-  const [testBody, setTestBody] = useState('Hello! This is a test message from Dentora Dental Practice Operating System.');
+  const [testBody, setTestBody] = useState('Hello! This is a test message from Teethly Dental Practice Operating System.');
   const [isTestDispatching, setIsTestDispatching] = useState(false);
   const [testDispatchResult, setTestDispatchResult] = useState<{ success: boolean; note: string } | null>(null);
 
@@ -163,7 +163,7 @@ export const ClinicSettings: React.FC<ClinicSettingsProps> = ({
         treatmentName: 'General Consultation',
         date: new Date().toISOString().split('T')[0],
         timeSlot: '10:00 AM',
-        clinicName: general?.clinicName || 'Dentora Clinic',
+        clinicName: general?.clinicName || 'Teethly Clinic',
       });
 
       setTestDispatchResult({
@@ -262,7 +262,7 @@ export const ClinicSettings: React.FC<ClinicSettingsProps> = ({
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `dentora_firestore_backup_${new Date().toISOString().split('T')[0]}.json`;
+    link.download = `Teethly_firestore_backup_${new Date().toISOString().split('T')[0]}.json`;
     link.click();
     URL.revokeObjectURL(url);
   };
@@ -604,7 +604,7 @@ export const ClinicSettings: React.FC<ClinicSettingsProps> = ({
                   </div>
                   <div>
                     <h4 className="font-extrabold text-white text-sm">
-                      {waWebStatus.user?.name || 'Dentora Clinic WhatsApp Account'}
+                      {waWebStatus.user?.name || 'Teethly Clinic WhatsApp Account'}
                     </h4>
                     <p className="text-emerald-300/80 text-[11px] font-mono mt-0.5">
                       {waWebStatus.user?.id ? `ID: ${waWebStatus.user.id}` : 'Active WhatsApp Web Session'}
@@ -729,7 +729,7 @@ export const ClinicSettings: React.FC<ClinicSettingsProps> = ({
                   </button>
 
                   <a
-                    href={`https://wa.me/15559876543?text=${encodeURIComponent('Hello! Confirming my appointment with Dentora Clinic.')}`}
+                    href={`https://wa.me/15559876543?text=${encodeURIComponent('Hello! Confirming my appointment with Teethly Clinic.')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-emerald-400 font-bold rounded-xl border border-slate-700 transition-all cursor-pointer text-xs inline-flex items-center gap-2"
@@ -992,7 +992,7 @@ export const ClinicSettings: React.FC<ClinicSettingsProps> = ({
             <span>Theme & Visual Customization</span>
           </h3>
           <p className="text-slate-600 font-medium">
-            Dentora defaults to a clean, eye-safe clinical light theme with high-contrast typography, zero distraction layout & fluid card spacing.
+            Teethly defaults to a clean, eye-safe clinical light theme with high-contrast typography, zero distraction layout & fluid card spacing.
           </p>
         </div>
       )}

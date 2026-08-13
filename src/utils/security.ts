@@ -1,4 +1,4 @@
-// Security Hardening & Input Sanitization Utilities for Dentora OS
+// Security Hardening & Input Sanitization Utilities for Teethly OS
 
 /**
  * Sanitizes string input to prevent XSS attacks when rendering HTML/Markdown or saving text fields.

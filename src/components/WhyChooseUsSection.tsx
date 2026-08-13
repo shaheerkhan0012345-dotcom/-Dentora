@@ -77,8 +77,8 @@ const FLOATING_FEATURES: FloatingFeature[] = [
     title: 'Get membership discount',
     icon: Percent,
     positionClass: 'bottom-6 left-6 lg:bottom-8 lg:left-8',
-    shortDetail: 'Exclusive Dentora Club savings up to 25%',
-    fullDetail: 'Join our Dentora Privilege Club to enjoy complimentary biannual hygiene cleanings, free emergency consultations, and 25% off cosmetic whitening treatments.',
+    shortDetail: 'Exclusive Teethly Club savings up to 25%',
+    fullDetail: 'Join our Teethly Privilege Club to enjoy complimentary biannual hygiene cleanings, free emergency consultations, and 25% off cosmetic whitening treatments.',
     benefits: [
       '2 free professional cleanings per year',
       '25% discount on cosmetic makeovers',
@@ -343,7 +343,7 @@ export const WhyChooseUsSection: React.FC = () => {
               <img 
                 ref={bgImageRef}
                 src={whyChooseUsImg} 
-                alt="Why Choose Dentora - Premium Dentist" 
+                alt="Why Choose Teethly - Premium Dentist" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-[82%_center] sm:object-[80%_center] scale-105"
               />
@@ -408,7 +408,7 @@ export const WhyChooseUsSection: React.FC = () => {
               </h2>
 
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                At Dentora, we combine high-precision clinical technology with boutique luxury comfort to deliver a seamless, gentle dental experience designed around you.
+                At Teethly, we combine high-precision clinical technology with boutique luxury comfort to deliver a seamless, gentle dental experience designed around you.
               </p>
 
               {/* Action CTA Button */}
@@ -494,7 +494,7 @@ export const WhyChooseUsSection: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-[11px] font-bold text-[#2073e5] uppercase tracking-wider">
-                    Dentora Standard
+                    Teethly Standard
                   </span>
                   <h3 className="text-xl sm:text-2xl font-bold text-[#0B2E78]">
                     {activeFeature.title}
@@ -523,7 +523,7 @@ export const WhyChooseUsSection: React.FC = () => {
               {/* Footer CTA */}
               <div className="flex items-center justify-between pt-2">
                 <span className="text-xs text-slate-400">
-                  Included in all Dentora consultations
+                  Included in all Teethly consultations
                 </span>
                 <button
                   onClick={() => {

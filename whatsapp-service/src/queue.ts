@@ -101,7 +101,7 @@ export async function processPendingNotificationQueue(): Promise<number> {
           appointmentTime: jobData.appointmentTime,
           treatmentName: jobData.treatmentName,
           amount: jobData.amount,
-          clinicName: 'Dentora Practice',
+          clinicName: 'Teethly Practice',
         });
       }
 

@@ -238,7 +238,7 @@ export const AIChatPage: React.FC<AIChatPageProps> = ({
 
     if (proposedAction) {
       const actionId = await createAIAction(proposedAction);
-      const actionNotice = `**[Dentora AI Action Engine]**\n\nI have generated a pending action proposal:\n* **Action**: ${proposedAction.title}\n* **Details**: ${proposedAction.previewSummary}\n\n*A human approval request (#${actionId.slice(0, 8)}) is now queued. Please confirm execution using the approval button above.*`;
+      const actionNotice = `**[Teethly AI Action Engine]**\n\nI have generated a pending action proposal:\n* **Action**: ${proposedAction.title}\n* **Details**: ${proposedAction.previewSummary}\n\n*A human approval request (#${actionId.slice(0, 8)}) is now queued. Please confirm execution using the approval button above.*`;
       
       let targetChatId = activeChatId;
       if (!targetChatId) {
@@ -333,7 +333,7 @@ Pending Balance: Rs. ${patientContextData.pendingBalance}`
               <Sparkles className="w-4.5 h-4.5" />
             </div>
             <h1 className="text-xl font-black text-slate-900 dark:text-white tracking-tight">
-              Dentora AI Copilot Station
+              Teethly AI Copilot Station
             </h1>
             <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-[#1d5bd8] dark:bg-blue-950 dark:text-blue-300 text-[10px] font-extrabold uppercase tracking-wider border border-blue-200 dark:border-blue-800">
               Enterprise Clinical Engine
@@ -503,7 +503,7 @@ Pending Balance: Rs. ${patientContextData.pendingBalance}`
                 </div>
                 <div className="min-w-0">
                   <h2 className="text-sm font-extrabold text-slate-900 dark:text-white truncate">
-                    {activeChat ? activeChat.title : 'Dentora AI Copilot'}
+                    {activeChat ? activeChat.title : 'Teethly AI Copilot'}
                   </h2>
                   <div className="flex items-center gap-2 text-[10px] text-slate-500 font-semibold mt-0.5">
                     <span className="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950 text-[#1d5bd8] dark:text-blue-300 font-extrabold uppercase border border-blue-200 dark:border-blue-800">
@@ -552,7 +552,7 @@ Pending Balance: Rs. ${patientContextData.pendingBalance}`
                     <div className="w-12 h-12 rounded-3xl bg-blue-50 dark:bg-blue-950/60 text-[#1d5bd8] dark:text-blue-400 border border-blue-100 dark:border-blue-800 flex items-center justify-center mx-auto shadow-sm">
                       <Sparkles className="w-6 h-6" />
                     </div>
-                    <h3 className="text-base font-black text-slate-900 dark:text-white">How can Dentora AI assist you today?</h3>
+                    <h3 className="text-base font-black text-slate-900 dark:text-white">How can Teethly AI assist you today?</h3>
                     <p className="text-xs text-slate-500 font-medium">
                       Type a query or slash command (`/invoice`, `/appointment`, `/prescription`). You can also dictate commands using the Voice & Typing Station above.
                     </p>
@@ -579,7 +579,7 @@ Pending Balance: Rs. ${patientContextData.pendingBalance}`
               {isGenerating && (
                 <div className="flex items-center gap-3 p-4 rounded-2xl bg-blue-50/80 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-xs text-[#1d5bd8] dark:text-blue-300 font-bold animate-pulse">
                   <RefreshCw className="w-4 h-4 animate-spin text-[#1d5bd8]" />
-                  <span>Dentora AI Copilot processing clinical request & checking active context...</span>
+                  <span>Teethly AI Copilot processing clinical request & checking active context...</span>
                 </div>
               )}
 
@@ -622,7 +622,7 @@ Pending Balance: Rs. ${patientContextData.pendingBalance}`
                       handleSend();
                     }
                   }}
-                  placeholder="Ask Dentora AI Copilot or type '/' for slash commands..."
+                  placeholder="Ask Teethly AI Copilot or type '/' for slash commands..."
                   className="flex-1 p-3.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl text-xs font-medium text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#1d5bd8]/30 focus:border-[#1d5bd8] shadow-2xs"
                 />
 

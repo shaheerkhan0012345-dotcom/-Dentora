@@ -56,7 +56,7 @@ export const slashCommandsList: SlashCommand[] = [
   },
   {
     command: '/help',
-    description: 'Display Dentora AI Copilot capabilities and clinical safeguards',
+    description: 'Display Teethly AI Copilot capabilities and clinical safeguards',
     category: 'Utility',
   },
   {
@@ -103,7 +103,7 @@ export const SlashCommandsMenu: React.FC<SlashCommandsMenuProps> = ({
   return (
     <div className="absolute bottom-full mb-2 left-0 w-full max-w-lg bg-white rounded-2xl border border-slate-200 shadow-2xl overflow-hidden z-40 p-2 space-y-1 animate-in fade-in slide-in-from-bottom-2 duration-150">
       <div className="px-3 py-1.5 border-b border-slate-100 flex items-center justify-between text-[10px] font-extrabold uppercase tracking-wider text-slate-400">
-        <span>Dentora AI Slash Commands</span>
+        <span>Teethly AI Slash Commands</span>
         <span>Press TAB or Enter to select</span>
       </div>
 

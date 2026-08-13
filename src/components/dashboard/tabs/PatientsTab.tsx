@@ -303,7 +303,7 @@ export const PatientsTab: React.FC<PatientsTabProps> = ({
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `Dentora_Patient_Directory_${new Date().toISOString().split('T')[0]}.csv`);
+    link.setAttribute('download', `Teethly_Patient_Directory_${new Date().toISOString().split('T')[0]}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

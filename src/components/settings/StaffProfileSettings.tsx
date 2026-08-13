@@ -30,7 +30,7 @@ export const StaffProfileSettings: React.FC<StaffProfileSettingsProps> = ({
   const { currentUser, refreshProfile } = useAuth();
 
   const [name, setName] = useState(initialName || currentUser?.displayName || 'Dr. Elena Rostova');
-  const [email] = useState(initialEmail || currentUser?.email || 'elena.rostova@dentora.com');
+  const [email] = useState(initialEmail || currentUser?.email || 'elena.rostova@Teethly.com');
   const [phone, setPhone] = useState(currentUser?.phone || '+92 300 9876543');
   const [specialization, setSpecialization] = useState('Senior Orthodontist & Cosmetic Specialist');
   const [medicalLicense, setMedicalLicense] = useState('PMC-DEN-88192');

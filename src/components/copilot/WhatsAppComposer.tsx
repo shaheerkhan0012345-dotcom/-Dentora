@@ -33,7 +33,7 @@ export const WhatsAppComposer: React.FC<WhatsAppComposerProps> = ({
       treatmentName: 'Dental Examination',
       date: 'Tomorrow',
       timeSlot: '10:00 AM',
-      clinicName: 'Dentora Dental Practice',
+      clinicName: 'Teethly Dental Practice',
     });
     setBodyText(text);
   }, [msgType, patientName, phone]);
@@ -50,7 +50,7 @@ export const WhatsAppComposer: React.FC<WhatsAppComposerProps> = ({
         treatmentName: 'Dental Examination',
         date: 'Tomorrow',
         timeSlot: '10:00 AM',
-        clinicName: 'Dentora Dental Practice',
+        clinicName: 'Teethly Dental Practice',
       });
       setSendResult(res.message || 'WhatsApp message dispatched successfully!');
       setTimeout(() => {

@@ -87,7 +87,7 @@ export const seedSampleMessages: Record<string, AIMessage[]> = {
       id: 'msg-002',
       chatId: 'chat-001',
       sender: 'model',
-      content: `**Dentora Clinical AI Summary — Sarah Jenkins (PT-8801)**
+      content: `**Teethly Clinical AI Summary — Sarah Jenkins (PT-8801)**
 
 - **Diagnosis**: Class I malocclusion with mild anterior crowding (Tooth #7-#10).
 - **Current Trajectory**: Tray 12 of 18 (**67% completed**).
@@ -112,7 +112,7 @@ export const seedSampleMessages: Record<string, AIMessage[]> = {
       id: 'msg-004',
       chatId: 'chat-002',
       sender: 'model',
-      content: `### 📊 Dentora Financial Audit — Unpaid Invoices Summary
+      content: `### 📊 Teethly Financial Audit — Unpaid Invoices Summary
 
 The clinic currently has **$3,420.00** in outstanding patient copays across 3 active accounts:
 
@@ -317,7 +317,7 @@ export async function sendCopilotRequest(payload: {
     // Smart Client Fallback if Express server route is temporarily unready
     const lower = payload.prompt.toLowerCase();
     if (lower.includes('/invoice') || lower.includes('unpaid') || lower.includes('invoice')) {
-      return `### 📊 Dentora Financial Audit — Unpaid Invoices
+      return `### 📊 Teethly Financial Audit — Unpaid Invoices
 
 The clinic currently records **$3,420.00** in outstanding patient copays:
 - **INV-8801**: Sarah Jenkins ($1,200.00 remaining)
@@ -336,11 +336,11 @@ Would you like me to draft SMS payment reminders or generate HSA insurance claim
 - **Next Appointment**: Thursday at 2:30 PM (Room 2)`;
     }
 
-    return `**Dentora AI Copilot Analysis**
+    return `**Teethly AI Copilot Analysis**
 
 I have analyzed your request regarding "${payload.prompt}". 
 
-Based on Dentora's HIPAA-compliant medical practice records, all parameters have been verified.
+Based on Teethly's HIPAA-compliant medical practice records, all parameters have been verified.
 - **User Role**: ${payload.userRole}
 - **Status**: Record validated cleanly.
 

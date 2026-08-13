@@ -55,7 +55,7 @@ export const AIChatMessageItem: React.FC<AIChatMessageItemProps> = ({
       <div className={`max-w-[85%] sm:max-w-[75%] space-y-1.5`}>
         {/* SENDER LABEL & TIMESTAMP */}
         <div className={`flex items-center gap-2 px-1 text-[10px] text-slate-400 font-bold ${isUser ? 'justify-end' : 'justify-start'}`}>
-          <span>{isUser ? userName : 'Dentora Gemini AI Copilot'}</span>
+          <span>{isUser ? userName : 'Teethly Gemini AI Copilot'}</span>
           <span>•</span>
           <span>
             {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -110,7 +110,7 @@ export const AIChatMessageItem: React.FC<AIChatMessageItemProps> = ({
             <div className="flex items-center justify-between pt-3 mt-2 border-t border-slate-100 text-[10px] text-slate-400">
               <div className="flex items-center gap-1">
                 <Sparkles className="w-3 h-3 text-purple-600" />
-                <span className="font-semibold text-slate-500">Dentora Medical Intelligence</span>
+                <span className="font-semibold text-slate-500">Teethly Medical Intelligence</span>
               </div>
 
               <div className="flex items-center gap-1.5 opacity-80 group-hover:opacity-100 transition-opacity">

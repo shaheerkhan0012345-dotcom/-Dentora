@@ -37,7 +37,7 @@ export const FloatingAICopilot: React.FC<FloatingAICopilotProps> = ({
       id: 'f-init',
       chatId: 'floating',
       sender: 'model',
-      content: 'Hello! I am your **Dentora AI Copilot**. Press **CTRL+K** anywhere to trigger me for quick clinical checks, invoice audits, or treatment notes.',
+      content: 'Hello! I am your **Teethly AI Copilot**. Press **CTRL+K** anywhere to trigger me for quick clinical checks, invoice audits, or treatment notes.',
       timestamp: new Date().toISOString(),
     },
   ]);
@@ -116,14 +116,14 @@ export const FloatingAICopilot: React.FC<FloatingAICopilotProps> = ({
       <button
         onClick={() => setIsOpen(true)}
         className="fixed bottom-6 right-6 z-40 bg-[#1d5bd8] hover:bg-[#154dbf] text-white p-3.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-all transform hover:scale-105 active:scale-95 cursor-pointer border border-blue-400/30 group"
-        title="Open Dentora AI Copilot (CTRL + K)"
+        title="Open Teethly AI Copilot (CTRL + K)"
       >
         <div className="relative">
           <Sparkles className="w-5 h-5 animate-pulse" />
           <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[#1d5bd8]"></span>
         </div>
         <span className="text-xs font-black tracking-wide hidden sm:inline pr-1">
-          Dentora AI
+          Teethly AI
         </span>
         <span className="hidden sm:inline px-1.5 py-0.5 rounded-md bg-white/20 text-[10px] font-mono font-bold">
           ⌘K
@@ -145,7 +145,7 @@ export const FloatingAICopilot: React.FC<FloatingAICopilotProps> = ({
                   <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-xs font-black tracking-wider uppercase">Dentora AI Copilot</h3>
+                  <h3 className="text-xs font-black tracking-wider uppercase">Teethly AI Copilot</h3>
                   <p className="text-[10px] text-slate-400">Instant Clinical & Financial Assistant</p>
                 </div>
               </div>
@@ -248,7 +248,7 @@ export const FloatingAICopilot: React.FC<FloatingAICopilotProps> = ({
                   value={prompt}
                   onChange={(e) => setPrompt(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                  placeholder="Ask Dentora AI Copilot..."
+                  placeholder="Ask Teethly AI Copilot..."
                   className="flex-1 p-2.5 bg-white border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:ring-1 focus:ring-purple-600"
                 />
                 <button

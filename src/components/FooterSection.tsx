@@ -298,7 +298,7 @@ export const FooterSection: React.FC = () => {
         {/* BOTTOM COPYRIGHT BAR */}
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold text-slate-400 tracking-wider">
           <p>
-            COPYRIGHT © 2026 | ALL RIGHTS RESERVED BY <span className="text-slate-700">DENTORA CLINIC</span>
+            COPYRIGHT © 2026 | ALL RIGHTS RESERVED BY <span className="text-slate-700">TEETHLY CLINIC</span>
           </p>
 
           <div className="flex items-center gap-6">

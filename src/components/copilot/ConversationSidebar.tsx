@@ -96,7 +96,7 @@ export const ConversationSidebar: React.FC<ConversationSidebarProps> = ({
               <Sparkles className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="text-xs font-black tracking-wider uppercase text-slate-200">Dentora Copilot</h2>
+              <h2 className="text-xs font-black tracking-wider uppercase text-slate-200">Teethly Copilot</h2>
               <p className="text-[10px] text-slate-400 font-medium">Memory & History</p>
             </div>
           </div>
@@ -205,7 +205,7 @@ export const ConversationSidebar: React.FC<ConversationSidebarProps> = ({
 
       {/* FOOTER INFO */}
       <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-[10px] text-slate-500 font-semibold">
-        <span>Dentora AI Engine v3.6</span>
+        <span>Teethly AI Engine v3.6</span>
         <span className="text-emerald-400 font-bold flex items-center gap-1">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
           Ready

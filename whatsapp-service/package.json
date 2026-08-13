@@ -1,7 +1,7 @@
 {
-  "name": "dentora-whatsapp-service",
+  "name": "Teethly-whatsapp-service",
   "version": "1.0.0",
-  "description": "Standalone Persistent WhatsApp Automation Service for Dentora Dental Clinic",
+  "description": "Standalone Persistent WhatsApp Automation Service for Teethly Dental Clinic",
   "main": "dist/server.js",
   "type": "module",
   "scripts": {

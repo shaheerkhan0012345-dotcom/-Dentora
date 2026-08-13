@@ -80,7 +80,7 @@ export const ReportGenerator: React.FC = () => {
   // CSV Export Helper
   const handleExportCSV = () => {
     let csvContent = 'data:text/csv;charset=utf-8,';
-    let filename = `dentora_report_${filter.category.toLowerCase().replace(/\s+/g, '_')}_${
+    let filename = `Teethly_report_${filter.category.toLowerCase().replace(/\s+/g, '_')}_${
       filter.timeframe.toLowerCase()
     }.csv`;
 

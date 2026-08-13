@@ -16,8 +16,8 @@ export interface PerformanceMetric {
 }
 
 class LoggerService {
-  private static STORAGE_KEY = 'dentora_system_logs';
-  private static PERF_KEY = 'dentora_perf_metrics';
+  private static STORAGE_KEY = 'Teethly_system_logs';
+  private static PERF_KEY = 'Teethly_perf_metrics';
 
   public getLogs(): SystemLogItem[] {
     try {
@@ -30,7 +30,7 @@ class LoggerService {
       {
         id: 'sys-log-1',
         type: 'INFO',
-        message: 'Dentora OS Initialized with PWA & Offline Sync Engine',
+        message: 'Teethly OS Initialized with PWA & Offline Sync Engine',
         source: 'AppBoot',
         timestamp: new Date(Date.now() - 1000 * 60 * 30).toISOString(),
       },

@@ -178,7 +178,7 @@ export async function initializeWhatsAppClient(clinicId = 'clinic-flagship'): Pr
       if (clientInstance?.info) {
         connectedNumber = clientInstance.info.wid.user;
         connectedUser = {
-          name: clientInstance.info.pushname || `Dentora Clinic (+${connectedNumber})`,
+          name: clientInstance.info.pushname || `Teethly Clinic (+${connectedNumber})`,
           id: clientInstance.info.wid._serialized,
         };
       }
@@ -216,7 +216,7 @@ export function simulatePairWhatsAppClient(clinicId = 'clinic-flagship'): WhatsA
   currentQrDataUrl = null;
   connectedNumber = '15553368672';
   connectedUser = {
-    name: 'Dentora Main Clinic (+1 555-DENTORA)',
+    name: 'Teethly Main Clinic (+1 555-Teethly)',
     id: '15553368672@s.whatsapp.net',
   };
   lastConnectedAt = new Date().toISOString();

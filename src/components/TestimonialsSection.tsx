@@ -51,7 +51,7 @@ const TESTIMONIALS_SLIDES: TestimonialItem[] = [
     id: 'slide-1',
     leftReview: {
       headline: 'A Seamless Transformation',
-      quote: 'The precision and attention to detail at Dentora is unmatched. My composite veneer treatment was completely painless and the natural results far exceeded my highest expectations.',
+      quote: 'The precision and attention to detail at Teethly is unmatched. My composite veneer treatment was completely painless and the natural results far exceeded my highest expectations.',
       author: 'Robert Fox',
       role: 'Invisalign Patient',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200',

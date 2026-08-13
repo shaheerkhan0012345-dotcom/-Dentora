@@ -23,7 +23,7 @@ dotenv.config();
 
 const PORT = process.env.PORT || 3001;
 const FRONTEND_URL = process.env.FRONTEND_URL || '*';
-const SERVICE_SECRET = process.env.WHATSAPP_SERVICE_SECRET || 'dentora_secret';
+const SERVICE_SECRET = process.env.WHATSAPP_SERVICE_SECRET || 'Teethly_secret';
 
 const app = express();
 
@@ -82,7 +82,7 @@ app.get('/health', (_req: Request, res: Response) => {
   const waStatus = getWhatsAppStatus();
   res.json({
     status: waStatus.status === 'READY' ? 'ok' : 'degraded',
-    service: 'dentora-whatsapp',
+    service: 'Teethly-whatsapp',
     whatsapp: waStatus.status,
     firebase: db ? 'connected' : 'disconnected',
     timestamp: new Date().toISOString(),
@@ -251,7 +251,7 @@ app.post('/whatsapp/retry-job', async (req: Request, res: Response) => {
 
 // Start Server & Queue Worker
 app.listen(Number(PORT), '0.0.0.0', () => {
-  logger.info(`Dentora Persistent WhatsApp Service running on port ${PORT} (0.0.0.0)`);
+  logger.info(`Teethly Persistent WhatsApp Service running on port ${PORT} (0.0.0.0)`);
 
   // Auto-initialize WhatsApp client & start background worker
   initializeWhatsAppClient().catch((e) => logger.error({ e }, 'Auto init error'));

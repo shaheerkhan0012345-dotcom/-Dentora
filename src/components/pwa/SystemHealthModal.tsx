@@ -253,7 +253,7 @@ export const SystemHealthModal: React.FC<SystemHealthModalProps> = ({ isOpen, on
                     <Upload className="w-5 h-5 text-purple-400" />
                     <h4 className="font-extrabold text-sm text-white">Restore Snapshot File</h4>
                   </div>
-                  <p className="text-xs text-slate-400 mb-4">Upload a valid Dentora backup `.json` file to restore full database records.</p>
+                  <p className="text-xs text-slate-400 mb-4">Upload a valid Teethly backup `.json` file to restore full database records.</p>
                   <label className="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs transition-all cursor-pointer flex items-center justify-center gap-2">
                     <Upload className="w-4 h-4" />
                     Upload Backup JSON

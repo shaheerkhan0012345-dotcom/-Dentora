@@ -22,7 +22,7 @@ const INITIAL_AUDITS: AuditLogRecord[] = [
     userRole: 'Admin',
     action: 'User Login',
     category: 'Auth',
-    details: 'Logged into Dentora Operating System via Secure Session',
+    details: 'Logged into Teethly Operating System via Secure Session',
     ipAddress: '192.168.1.45',
     timestamp: new Date().toISOString(),
     result: 'Success',

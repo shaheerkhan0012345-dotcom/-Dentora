@@ -145,7 +145,7 @@ export async function initWhatsAppBot(forceRestart = false) {
           clearTimeout(qrTimeout);
           connectionState = 'connected';
           currentQrCodeDataUrl = null;
-          connectedUser = waSocket.user || { name: 'Dentora Main Practice WhatsApp (+1 555-DENTORA)', id: waSocket.user?.id || '15553368672@s.whatsapp.net' };
+          connectedUser = waSocket.user || { name: 'Teethly Main Practice WhatsApp (+1 555-TEETHLY)', id: waSocket.user?.id || '15553368672@s.whatsapp.net' };
           console.log('✅ WhatsApp Web (Baileys) Bot Connected Successfully!');
           syncStatusToFirestore();
         }
@@ -189,7 +189,7 @@ export function simulatePairWhatsAppDevice() {
   currentQrCodeDataUrl = null;
   connectedUser = {
     id: '15553368672@s.whatsapp.net',
-    name: 'Dentora Main Clinic (+1 555-DENTORA)',
+    name: 'Teethly Main Clinic (+1 555-TEETHLY)',
   };
   lastError = null;
   syncStatusToFirestore();

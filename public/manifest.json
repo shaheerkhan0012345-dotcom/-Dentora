@@ -1,16 +1,16 @@
 {
-  "short_name": "Dentora",
-  "name": "Dentora Dental Practice OS",
+  "short_name": "Teethly",
+  "name": "Teethly Dental Practice OS",
   "description": "Enterprise-Level AI-Powered Dental Practice Operating System",
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "/teethly.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "/logo.png",
+      "src": "/teethly.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"

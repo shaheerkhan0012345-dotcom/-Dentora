@@ -65,9 +65,9 @@ async function startServer() {
     });
   };
 
-  // Helper to build Dentora Practice Copilot System Instruction
+  // Helper to build Teethly Practice Copilot System Instruction
   const buildSystemInstruction = (role: string, patientContext?: string, clinicContext?: string, settingsPrompt?: string) => {
-    return `You are Dentora AI Copilot, an enterprise-grade AI Clinical & Dental Practice Assistant embedded inside the Dentora Dental Practice Operating System.
+    return `You are Teethly AI Copilot, an enterprise-grade AI Clinical & Dental Practice Assistant embedded inside the Teethly Dental Practice Operating System.
 You are NOT a generic chatbot. You are a specialized healthcare and practice management copilot built for modern dental clinics.
 
 OPERATIONAL ROLE CONSTRAINTS:
@@ -489,7 +489,7 @@ Respond intelligently, concisely, and helpfully in clean Markdown.`;
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Dentora Server running on http://0.0.0.0:${PORT}`);
+    console.log(`Teethly Server running on http://0.0.0.0:${PORT}`);
   });
 }
 

@@ -25,7 +25,7 @@ export const PatientEmptyState: React.FC<PatientEmptyStateProps> = ({
         <p className="text-xs text-slate-500 font-medium">
           {isFiltered
             ? 'Try adjusting your search keywords, doctor assignment, or status filter to view clinical records.'
-            : 'Get started by creating your first patient electronic health record in the Dentora system.'}
+            : 'Get started by creating your first patient electronic health record in the Teethly system.'}
         </p>
       </div>
 

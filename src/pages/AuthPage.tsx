@@ -19,7 +19,7 @@ import { UserProfile } from '../types';
 import { useAuth } from '../hooks/useAuth';
 import { UserRole } from '../types/user';
 import { loginSchema, signUpSchema, forgotPasswordSchema } from '../schemas/authSchemas';
-import { DentoraLogo } from '../components/common/DentoraLogo';
+import { TeethlyLogo } from '../components/common/TeethlyLogo';
 
 interface AuthPageProps {
   onNavigateHome: () => void;
@@ -41,8 +41,8 @@ export const AuthPage: React.FC<AuthPageProps> = ({
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   // Form states with default demo credentials
-  const [email, setEmail] = useState('admin@dentoraclinic.com');
-  const [password, setPassword] = useState('admin123');
+  const [email, setEmail] = useState('admin@teethlyclinic.com');
+  const [password, setPassword] = useState('password123');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [selectedRole, setSelectedRole] = useState<UserRole>('Admin');
@@ -53,8 +53,8 @@ export const AuthPage: React.FC<AuthPageProps> = ({
     setError(null);
     setSuccessMessage(null);
     
-    const demoEmail = 'admin.demo@dentoraclinic.com';
-    const demoPass = 'DentoraDemo2026!';
+    const demoEmail = 'admin.demo@teethlyclinic.com';
+    const demoPass = 'TeethlyDemo2026!';
     
     try {
       // Try logging in with demo account
@@ -104,7 +104,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({
           phone: currentUser.phone || '',
           avatar: currentUser.photoURL || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
           memberSince: currentUser.memberSince || 'August 2026',
-          plan: 'Dentora Dental Member',
+          plan: 'Teethly Dental Member',
           assignedOrthodontist: 'Dr. Elena Rostova, MD',
         });
       }
@@ -157,7 +157,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({
           phone: '+1 (555) 987-6543',
           avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
           memberSince: 'August 2026',
-          plan: 'Dentora Access Portal',
+          plan: 'Teethly Access Portal',
           assignedOrthodontist: 'Dr. Elena Rostova, MD',
         };
         onLoginSuccess(mappedUser);
@@ -223,7 +223,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({
             onClick={onNavigateHome}
             className="flex items-center text-slate-900 hover:opacity-80 transition-opacity cursor-pointer group"
           >
-            <DentoraLogo size="lg" />
+            <TeethlyLogo size="lg" />
           </button>
 
           <button
@@ -278,7 +278,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 font-medium">
               {mode === 'signin' && 'Select your role and enter credentials to continue'}
-              {mode === 'signup' && 'Register for VIP Dentora Patient or Staff Portal access'}
+              {mode === 'signup' && 'Register for VIP Teethly Patient or Staff Portal access'}
               {mode === 'forgot' && 'Enter your account email to receive reset link'}
             </p>
           </div>
@@ -465,7 +465,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({
                     <button
                       type="button"
                       onClick={() => {
-                        setEmail('admin@dentoraclinic.com');
+                        setEmail('admin@Teethlyclinic.com');
                         setPassword('admin123');
                       }}
                       className="text-[11px] font-extrabold text-[#1d5bd8] hover:underline cursor-pointer"
@@ -474,7 +474,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({
                     </button>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[11px] text-slate-600 font-mono bg-white p-2 rounded-lg border border-slate-200/80 gap-1">
-                    <span>Email: <strong className="text-slate-900 font-bold">admin@dentoraclinic.com</strong></span>
+                    <span>Email: <strong className="text-slate-900 font-bold">admin@Teethlyclinic.com</strong></span>
                     <span>Pass: <strong className="text-slate-900 font-bold">admin123</strong></span>
                   </div>
                 </div>

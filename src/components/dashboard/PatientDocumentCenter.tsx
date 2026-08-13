@@ -35,7 +35,7 @@ export const PatientDocumentCenter: React.FC<PatientDocumentCenterProps> = ({
 
   const handleDownload = (docItem: PatientPortalDocument) => {
     // Generate simulated secure download
-    const blob = new Blob([`Dentora EHR Record: ${docItem.title}\nPatient: ${patientName} (${patientId})\nCategory: ${docItem.category}\nDate: ${docItem.uploadedDate}\nIssued By: ${docItem.doctorName || 'Dentora Specialist Dental'}`], {
+    const blob = new Blob([`Teethly EHR Record: ${docItem.title}\nPatient: ${patientName} (${patientId})\nCategory: ${docItem.category}\nDate: ${docItem.uploadedDate}\nIssued By: ${docItem.doctorName || 'Teethly Specialist Dental'}`], {
       type: 'text/plain;charset=utf-8',
     });
     const url = URL.createObjectURL(blob);
