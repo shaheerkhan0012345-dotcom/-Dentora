@@ -1,0 +1,6 @@
+{
+  "name": "Dentora Dental Clinic Management System",
+  "description": "Enterprise-level Dental Clinic Management System with role-based dashboards, patient queue, appointments, dental charts, billing, inventory, and AI clinical assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
