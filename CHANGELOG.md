@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-08-14
+### Notes
+- Code cleanup and documentation improvements
+- Added inline comments for maintainability
+- Reviewed and confirmed stable deployment on Railway + Vercel
+
 ## [1.0.1] - 2026-08-14
 ### Improved
 - Performance optimizations for appointment loading
