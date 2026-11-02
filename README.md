@@ -1,2 +1,2 @@
 
-Dental Clinic Software
+Dental Clinic Software For DENTIST
