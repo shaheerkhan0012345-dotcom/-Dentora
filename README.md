@@ -1,2 +1,2 @@
 
-Dental Clinic Software For DENTIST
+Dental Clinic Software For DENTIST 2026
